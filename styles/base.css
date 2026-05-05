@@ -1,0 +1,328 @@
+/* ── CSS Variables ── */
+:root {
+  --color-primary:    #0f2a47;
+  --color-secondary:  #1a6fb5;
+  --color-accent:     #f0a500;
+  --color-accent2:    #008751;
+  --color-light:      #f0f4f9;
+  --color-text:       #1a1a2e;
+  --color-muted:      #4a5568;
+  --color-white:      #ffffff;
+  --font-heading:     'Playfair Display', Georgia, serif;
+  --font-body:        'Source Sans 3', sans-serif;
+  --radius:           14px;
+  --radius-sm:        8px;
+  --shadow:           0 8px 32px rgba(15, 42, 71, 0.12);
+  --shadow-hover:     0 16px 48px rgba(15, 42, 71, 0.20);
+  --transition:       0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-light);
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-accent); }
+
+/* ── Header ── */
+header {
+  background: linear-gradient(135deg, #0f2a47 0%, #1a4a7a 100%);
+  color: var(--color-white);
+  padding: 2.5rem 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(240,165,0,0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(0,135,81,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+header span#course-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  letter-spacing: 0.04em;
+  padding-bottom: 1.8rem;
+  position: relative;
+}
+
+header span#course-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+/* ── Navigation ── */
+nav {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+nav a {
+  color: rgba(255,255,255,0.80);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px 2px 0 0;
+  transition: transform var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-white);
+  background: rgba(255,255,255,0.08);
+}
+nav a:hover::after { transform: translateX(-50%) scaleX(1); }
+
+/* ── Main ── */
+main {
+  max-width: 1060px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+main > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ── Cards Grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Card Base ── */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.card-header {
+  background: linear-gradient(90deg, var(--color-primary) 0%, #1a4a7a 100%);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 1.6rem 1.8rem;
+}
+
+/* ── About Me Card ── */
+.about-top {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+  margin-bottom: 1.4rem;
+}
+
+.about-top p {
+  font-size: 0.97rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.profile-img {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  
+}
+
+/* ── Location Section ── */
+.location-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+  padding: 0.6rem 0;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.location-title::before,
+.location-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c8d9ed);
+}
+.location-title::before { left: 0; }
+.location-title::after  { right: 0; background: linear-gradient(to left, transparent, #c8d9ed); }
+
+.location-info {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.flag-figure {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.flag-img {
+  width: 130px;
+  height: auto;
+  border: 2px solid #dde4ee;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.flag-caption {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+.location-info > p {
+  font-size: 0.93rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* ── Resources Card ── */
+.resources-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.2rem;
+}
+
+.card-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-body ul li {
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.card-body ul li:hover {
+  background: var(--color-light);
+}
+
+.card-body ul li::before {
+  content: '→ ';
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.card-body ul li a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.card-body ul li a:hover {
+  color: var(--color-accent);
+}
+
+/* ── Footer ── */
+footer {
+  background: linear-gradient(135deg, #0f2a47 0%, #1a4a7a 100%);
+  color: #a0b8d0;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #008751, #f0a500, #008751);
+}
+
+footer p { margin: 0.3rem 0; }
+
+footer #lastModified {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+}
