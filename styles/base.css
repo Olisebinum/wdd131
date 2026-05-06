@@ -166,6 +166,7 @@ main > h1 {
 }
 
 .card-header {
+  background: var(--color-header-bg);
   background: linear-gradient(90deg, var(--color-header-bg) 0%, #1a4a7a 100%);
   color: var(--color-header-text);
   font-family: var(--font-body);
