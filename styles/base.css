@@ -1,19 +1,23 @@
-/* ── CSS Variables ── */
 :root {
-  --color-primary:   #0f2a47;
-  --color-secondary: #1a6fb5;
-  --color-accent:    #f0a500;
-  --color-accent2:   #008751;
-  --color-light:     #f0f4f9;
-  --color-text:      #1a1a2e;
-  --color-muted:     #4a5568;
-  --font-heading:    'Playfair Display', Georgia, serif;
-  --font-body:       'Source Sans 3', sans-serif;
-  --radius:          14px;
-  --radius-sm:       8px;
-  --shadow:          0 8px 32px #1a3a5c26;
-  --shadow-hover:    0 16px 48px #1a3a5c33;
-  --transition:      0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --color-primary:      #0f2a47;
+  --color-secondary:    #1a6fb5;
+  --color-accent:       #f0a500;
+  --color-accent2:      #008751;
+  --color-light:        #f0f4f9;
+  --color-text:         #1a1a2e;
+  --color-muted:        #4a5568;
+  --color-header-bg:    #0f2a47;
+  --color-header-text:  #ffffff;
+  --color-nav-bg:       #0a1e33;
+  --color-footer-bg:    #0f2a47;
+  --color-card-bg:      #ffffff;
+  --font-heading:       'Playfair Display', Georgia, serif;
+  --font-body:          'Source Sans 3', sans-serif;
+  --radius:             14px;
+  --radius-sm:          8px;
+  --shadow:             0 8px 32px #1a3a5c26;
+  --shadow-hover:       0 16px 48px #1a3a5c33;
+  --transition:         0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── Reset & Base ── */
@@ -38,8 +42,7 @@ a:hover { color: var(--color-accent); }
 
 /* ── Header ── */
 header {
-  background: linear-gradient(135deg, #0f2a47 0%, #1a4a7a 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-header-bg) 0%, #1a4a7a 100%);
   padding: 2.5rem 2rem 0;
   text-align: center;
   position: relative;
@@ -63,7 +66,8 @@ header span#course-title {
   letter-spacing: 0.04em;
   padding-bottom: 1.8rem;
   position: relative;
-  color: #ffffff;
+  color: var(--color-header-text);
+  background: transparent;
 }
 
 header span#course-title::after {
@@ -80,13 +84,13 @@ header span#course-title::after {
 nav {
   display: flex;
   justify-content: center;
-  background: #0a1e33;
-  color: #ffffff;
+  background: var(--color-nav-bg);
+  color: var(--color-header-text);
   position: relative;
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--color-header-text);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.88rem;
@@ -114,7 +118,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: var(--color-header-text);
   background: #1a3a5c;
 }
 nav a:hover::after { transform: translateX(-50%) scaleX(1); }
@@ -162,8 +166,8 @@ main > h1 {
 }
 
 .card-header {
-  background: linear-gradient(90deg, #0f2a47 0%, #1a4a7a 100%);
-  color: #ffffff;
+  background: linear-gradient(90deg, var(--color-header-bg) 0%, #1a4a7a 100%);
+  color: var(--color-header-text);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1rem;
@@ -174,7 +178,7 @@ main > h1 {
 }
 
 .card-body {
-  background: #ffffff;
+  background: var(--color-card-bg);
   color: var(--color-text);
   padding: 1.6rem 1.8rem;
 }
@@ -306,8 +310,8 @@ main > h1 {
 
 /* ── Footer ── */
 footer {
-  background: linear-gradient(135deg, #0f2a47 0%, #1a4a7a 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-footer-bg) 0%, #1a4a7a 100%);
+  color: var(--color-header-text);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
