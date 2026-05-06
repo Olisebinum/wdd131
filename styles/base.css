@@ -5,7 +5,7 @@
   --color-accent:         #f0a500;
   --color-accent2:        #008751;
   --color-light:          #f0f4f9;
-  --color-text:           #1a1a2e;
+  --color-text:           #111827;
   --color-muted:          #4a5568;
   --color-header-bg:      #0f2a47;
   --color-header-text:    #ffffff;
@@ -48,6 +48,7 @@ a:hover { color: var(--color-accent); }
 /* ── Header ── */
 header {
   background: var(--color-header-bg);
+  color: var(--color-header-text);
   padding: 2.5rem 2rem 0;
   text-align: center;
   position: relative;
@@ -90,6 +91,7 @@ nav {
   display: flex;
   justify-content: center;
   background: var(--color-nav-bg);
+  color: var(--color-nav-text);
   position: relative;
 }
 
