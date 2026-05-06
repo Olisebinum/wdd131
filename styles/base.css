@@ -42,7 +42,7 @@ a:hover { color: var(--color-accent); }
 
 /* ── Header ── */
 header {
-  background: linear-gradient(135deg, var(--color-header-bg) 0%, #1a4a7a 100%);
+  background: linear-gradient(135deg, var(--color-header-bg) 0%, var(--color-header-bg) 1%, #1a4a7a 100%);
   padding: 2.5rem 2rem 0;
   text-align: center;
   position: relative;
@@ -166,8 +166,7 @@ main > h1 {
 }
 
 .card-header {
-  background: var(--color-header-bg);
-  background: linear-gradient(90deg, var(--color-header-bg) 0%, #1a4a7a 100%);
+  background: linear-gradient(90deg, var(--color-header-bg) 0%, var(--color-header-bg) 1%, #1a4a7a 100%);
   color: var(--color-header-text);
   font-family: var(--font-body);
   font-weight: 700;
@@ -311,7 +310,7 @@ main > h1 {
 
 /* ── Footer ── */
 footer {
-  background: linear-gradient(135deg, var(--color-footer-bg) 0%, #1a4a7a 100%);
+  background: linear-gradient(135deg, var(--color-footer-bg) 0%, var(--color-footer-bg) 1%, #1a4a7a 100%);
   color: var(--color-header-text);
   text-align: center;
   padding: 2rem 1rem;
