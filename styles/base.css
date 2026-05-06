@@ -54,8 +54,8 @@ header::before {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, #f0a50014 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, #00875114 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, #f0a50014 0%, #00000000 60%),
+    radial-gradient(circle at 80% 20%, #00875114 0%, #00000000 50%);
   pointer-events: none;
 }
 
@@ -67,7 +67,7 @@ header span#course-title {
   padding-bottom: 1.8rem;
   position: relative;
   color: var(--color-header-text);
-  background: transparent;
+  background: var(--color-header-bg);
 }
 
 header span#course-title::after {
@@ -228,11 +228,11 @@ main > h1 {
 }
 .location-title::before {
   left: 0;
-  background: linear-gradient(to right, transparent, #c8d9ed);
+  background: linear-gradient(to right, #00000000, #c8d9ed);
 }
 .location-title::after {
   right: 0;
-  background: linear-gradient(to left, transparent, #c8d9ed);
+  background: linear-gradient(to left, #00000000, #c8d9ed);
 }
 
 .location-info {
