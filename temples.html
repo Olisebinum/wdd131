@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album</title>
+  <meta name="description" content="A personal collection of Latter-day Saint temples from around the world.">
+  <meta name="author" content="Olise Ossai Ebinum">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Mobile-first CSS, then larger view -->
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 640px)">
+
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <p class="site-title">Temple Album</p>
+
+      <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+
+      <nav id="main-nav">
+        <a href="#all">Home</a>
+        <a href="#old">Old</a>
+        <a href="#new">New</a>
+        <a href="#large">Large</a>
+        <a href="#small">Small</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Temples of The Church of Jesus Christ<br>of Latter-day Saints</h1>
+
+    <div class="gallery">
+
+      <figure>
+        <img src="images/salt-lake-temple.jpg"
+             alt="Salt Lake Temple at evening" loading="lazy">
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/nauvoo_temple.jpeg"
+             alt="Nauvoo Illinois Temple exterior" loading="lazy">
+        <figcaption>Nauvoo Illinois Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/abidjan_ivory_coast_temple_exterior.png"
+             alt="Abidjan Ivory Coast Temple" loading="lazy">
+        <figcaption>Abidjan Ivory Coast Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/accra_ghana_temple_evening.jpeg"
+             alt="Accra Ghana Temple exterior" loading="lazy">
+        <figcaption>Accra Ghana Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/aba_nigeria_temple_morning.jpeg"
+             alt="Aba Nigeria Temple exterior" loading="lazy">
+        <figcaption>Aba Nigeria Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/rome_italy_temple_day.jpeg"
+             alt="Rome Italy Temple exterior" loading="lazy">
+        <figcaption>Rome Italy Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/paris_france_temple_exterior.jpeg"
+             alt="Paris France Temple exterior" loading="lazy">
+        <figcaption>Paris France Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/tokyo_japan_temple_daytime.jpeg"
+             alt="Tokyo Japan Temple exterior" loading="lazy">
+        <figcaption>Tokyo Japan Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/provo_temple.jpeg"
+             alt="Provo Utah Temple exterior" loading="lazy">
+        <figcaption>Provo Utah Temple</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> &mdash; Olise Ossai Ebinum &mdash; WDD 131</p>
+    <p>Last Modified: <span id="lastmodified"></span></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* ══════════════════════════════════════════
+   temples-large.css
+   Applied at min-width: 640px via <link media>
+   Overrides mobile layout for larger screens
+   ══════════════════════════════════════════ */
+
+/* ── Header: single row, hamburger hidden ── */
+.header-inner {
+  flex-wrap: nowrap;
+}
+
+#hamburger {
+  display: none;
+}
+
+/* ── Nav: always visible, horizontal flex row ── */
+#main-nav {
+  display: flex !important;
+  flex-direction: row;
+  width: auto;
+  padding: 0;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+#main-nav a {
+  border-bottom: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+#main-nav a:hover {
+  padding-left: 0.75rem;
+  background-color: rgba(200, 169, 110, 0.12);
+  color: var(--gold-light);
+}
+
+/* ── H1 ── */
+h1 {
+  font-size: 2.1rem;
+}
+
+/* ── Gallery: 2 columns at 640px ── */
+.gallery {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ── Gallery: 3 columns at 900px ── */
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  figure img {
+    height: 200px;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+}
