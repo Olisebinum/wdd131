@@ -15,7 +15,7 @@
 
 /* ── Nav: always visible, horizontal flex row ── */
 #main-nav {
-  display: flex !important;
+  display: flex;
   flex-direction: row;
   width: auto;
   padding: 0;
@@ -33,7 +33,6 @@
 #main-nav a:hover {
   padding-left: 0.75rem;
   background-color: rgba(200, 169, 110, 0.12);
-  color: var(--gold-light);
 }
 
 /* ── H1 ── */
