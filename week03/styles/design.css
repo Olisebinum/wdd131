@@ -1,0 +1,124 @@
+/* ══════════════════════════════════════════
+   design.css – WDD Design Principles
+   Color scheme: deep navy + warm cream + gold
+   ══════════════════════════════════════════ */
+
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML Element Selectors */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 1rem;
+  background-color: #f7f3ed;
+  color: #222222;
+}
+
+header,
+main,
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+h1 {
+  border-bottom: 1px solid rgb(0 0 0 / 0.1);
+  margin: 1rem 0;
+  color: #1b2a3f;
+}
+
+/* Two-column grid layout */
+main {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-gap: 1.5rem;
+}
+
+section {
+  padding: 1rem;
+}
+
+/* h2 left-aligned and spans both columns */
+h2 {
+  color: #1b2a3f;
+  grid-column: 1 / 3;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  color: #1b2a3f;
+}
+
+h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  color: #1b2a3f;
+  font-size: 1rem;
+}
+
+h4:first-child {
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Footer left-aligned */
+footer {
+  margin-top: 1rem;
+  border-top: 1px solid rgb(0 0 0 / 0.1);
+  padding: 0.5rem 0;
+  font-size: smaller;
+  text-align: left;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Class Selectors */
+
+/* Banner replaces marquee */
+.banner {
+  border: 1px solid rgb(0 0 0 / 0.2);
+  padding: 1rem;
+  background-color: #1b2a3f;
+  color: #e2c98e;
+  font-weight: 700;
+  word-break: break-word;
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Callout — contrast fix:
+   #ffffff on #1b2a3f = 14.49:1 — passes AA and AAA
+   padding fixed to 1.5rem 2rem
+   spans both columns */
+.callout {
+  border: 1px solid rgb(0 0 0 / 0.1);
+  color: #ffffff;
+  background-color: #1b2a3f;
+  grid-column: 1 / 3;
+  padding: 1.5rem 2rem;
+}
+
+.callout h3 {
+  color: #e2c98e;
+  margin-bottom: 0.5rem;
+}
