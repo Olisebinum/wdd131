@@ -1,0 +1,32 @@
+/* ══════════════════════════════════════════
+   responsive-images.css – W03 Activity
+   ══════════════════════════════════════════ */
+
+/* Universal Selector */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f7f3ed;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Hero container */
+.hero {
+  width: 100%;
+}
+
+/* Responsive image — maintains 2:1 aspect ratio */
+.hero img {
+  width: 100%;
+  height: auto;
+}

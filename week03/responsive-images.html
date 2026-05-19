@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Images</title>
+  <meta name="description" content="A demonstration of responsive images using the HTML picture element.">
+  <meta name="author" content="Olise Ossai Ebinum">
+  <link rel="stylesheet" href="styles/responsive-images.css">
+</head>
+<body>
+
+  <main>
+    <div class="hero">
+      <picture>
+        <!-- Large: 1500x750 — shown at 1000px and above -->
+        <source
+          srcset="images/hero-large.webp"
+          media="(min-width: 1000px)">
+
+        <!-- Medium: 1000x500 — shown at 500px and above -->
+        <source
+          srcset="images/hero-medium.webp"
+          media="(min-width: 500px)">
+
+        <!-- Small: 500x250 — default fallback -->
+        <img
+          src="images/hero-small.webp"
+          alt="Exterior view of a Latter-day Saint temple"
+          width="1500"
+          height="750">
+      </picture>
+    </div>
+  </main>
+
+</body>
+</html>

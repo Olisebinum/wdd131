@@ -1,0 +1,293 @@
+/* ══════════════════════════════════════════
+   place.css – Nigeria | Modern Minimalist
+   Fonts: Bebas Neue (display) + DM Sans (body)
+   Color: Deep forest green + warm off-white + gold accent
+   ══════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  --green:        #006837;
+  --green-mid:    #008751;
+  --green-light:  #e8f5ee;
+  --gold:         #c9a84c;
+  --white:        #ffffff;
+  --off-white:    #f4f4f0;
+  --text:         #111111;
+  --text-muted:   #666666;
+  --border:       #e0e0e0;
+  --card-bg:      rgba(255, 255, 255, 0.96);
+
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --radius:       2px;
+  --shadow:       0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font-body);
+  background-color: var(--off-white);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  background-color: var(--green);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* Nigerian flag accent bars */
+.flag-bar {
+  display: block;
+  width: 4px;
+  height: 3rem;
+  background-color: var(--white);
+  opacity: 0.4;
+  border-radius: 2px;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 3px solid var(--gold);
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.55));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 1.5rem 1.25rem 0.75rem;
+  text-align: center;
+}
+
+/* ── Main ── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 1.5rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Section Cards ── */
+.data-section,
+.weather-section {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border-top: 3px solid var(--green);
+}
+
+/* ── Section Headings ── */
+.data-section h2,
+.weather-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.section-num {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  background-color: var(--green-light);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+}
+
+/* Weather pseudo-element icon (wider view) */
+.weather-heading::after {
+  content: ' ⛅';
+  font-size: 1.1rem;
+  margin-left: 0.25rem;
+}
+
+/* ── Data List ── */
+dl {
+  padding: 0.5rem 0;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-row:hover {
+  background-color: var(--green-light);
+}
+
+dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+dd {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: right;
+}
+
+/* Wind Chill highlight row */
+.data-row.highlight dt {
+  color: var(--green);
+}
+
+.data-row.highlight dd {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Weather SVG icon (mobile only) ── */
+.weather-icon-mobile {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 1rem auto 0.25rem;
+}
+
+/* ── Footer ── */
+footer {
+  background-color: var(--green);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 2;
+  border-top: 3px solid var(--gold);
+  letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════════════════
+   Wider View – 640px and above
+   ══════════════════════════════════════════ */
+@media (min-width: 640px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .data-section {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .weather-section {
+    width: 280px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  /* Hide SVG on wider view */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  .hero-label {
+    font-size: 1.4rem;
+    letter-spacing: 0.35em;
+  }
+}
+
+@media (min-width: 900px) {
+  header h1 {
+    font-size: 5rem;
+  }
+
+  .hero {
+    max-height: 580px;
+  }
+
+  .hero img {
+    object-fit: cover;
+    height: 580px;
+  }
+
+  /* Float cards over hero */
+  main {
+    margin-top: -160px;
+    position: relative;
+    z-index: 10;
+    padding: 0 2.5rem 2.5rem;
+  }
+
+  .data-section,
+  .weather-section {
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.94);
+  }
+}
