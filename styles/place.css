@@ -9,11 +9,11 @@
   --green:        #006837;
   --green-mid:    #008751;
   --green-light:  #e8f5ee;
-  --gold:         #c9a84c;
+  --gold:         #a07828;
   --white:        #ffffff;
   --off-white:    #f4f4f0;
   --text:         #111111;
-  --text-muted:   #666666;
+  --text-muted:   #595959;
   --border:       #e0e0e0;
   --card-bg:      rgba(255, 255, 255, 0.96);
 
@@ -156,9 +156,7 @@ main {
 }
 
 .weather-heading::after {
-  content: ' ⛅';
-  font-size: 1.1rem;
-  margin-left: 0.25rem;
+  content: none;
 }
 
 /* ── Data List ── */
@@ -259,6 +257,12 @@ footer {
   }
 
   .weather-icon-mobile { display: none; }
+
+  .weather-heading::after {
+    content: ' ⛅';
+    font-size: 1.1rem;
+    margin-left: 0.25rem;
+  }
 
   .hero-label {
     font-size: 1.3rem;
