@@ -9,11 +9,11 @@
   --green:        #006837;
   --green-mid:    #008751;
   --green-light:  #e8f5ee;
-  --gold:         #c9a84c;
+  --gold:         #a07828;
   --white:        #ffffff;
   --off-white:    #f4f4f0;
   --text:         #111111;
-  --text-muted:   #666666;
+  --text-muted:   #595959;
   --border:       #e0e0e0;
   --card-bg:      rgba(255, 255, 255, 0.96);
 
@@ -156,9 +156,7 @@ main {
 }
 
 .weather-heading::after {
-  content: ' ⛅';
-  font-size: 1.1rem;
-  margin-left: 0.25rem;
+  content: none;
 }
 
 /* ── Data List ── */
@@ -205,7 +203,7 @@ dd {
 /* ── Footer ── */
 footer {
   background-color: var(--green);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--white);
   text-align: center;
   padding: 1.25rem 1rem;
   font-size: 0.82rem;
@@ -248,17 +246,23 @@ footer {
   .data-section {
     flex: 1;
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: rgba(255, 255, 255, 0.97);
   }
 
   .weather-section {
     width: 240px;
     flex-shrink: 0;
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: rgba(255, 255, 255, 0.97);
   }
 
   .weather-icon-mobile { display: none; }
+
+  .weather-heading::after {
+    content: ' ⛅';
+    font-size: 1.1rem;
+    margin-left: 0.25rem;
+  }
 
   .hero-label {
     font-size: 1.3rem;
@@ -289,6 +293,6 @@ footer {
   .data-section,
   .weather-section {
     backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: rgba(255, 255, 255, 0.97);
   }
 }
