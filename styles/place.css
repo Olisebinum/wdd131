@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════════
-   place.css – Nigeria
-   Matches Madagascar course example layout
+   place.css – Nigeria | Modern Minimalist
    ══════════════════════════════════════════ */
 
 /* ── CSS Variables ── */
@@ -17,7 +16,7 @@
   --font-display: 'Bebas Neue', Impact, sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
-  --shadow:       0 2px 12px rgba(0, 0, 0, 0.18);
+  --shadow:       0 4px 16px rgba(0, 0, 0, 0.18);
   --card-bg:      rgba(255, 255, 255, 0.96);
 }
 
@@ -68,14 +67,17 @@ header h1 {
 }
 
 /* ══════════════════════════════════════════
-   SMALL (mobile) — image then cards below
+   HERO
    ══════════════════════════════════════════ */
 .hero {
-  position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
-.hero picture { display: block; width: 100%; }
+.hero picture {
+  display: block;
+  width: 100%;
+}
 
 .hero img {
   width: 100%;
@@ -84,10 +86,9 @@ header h1 {
   object-fit: cover;
 }
 
-/* hero-label hidden on mobile */
-.hero-label { display: none; }
-
-/* main: stacks below image on mobile */
+/* ══════════════════════════════════════════
+   SMALL (mobile) — cards flow below image
+   ══════════════════════════════════════════ */
 main {
   display: flex;
   flex-direction: column;
@@ -104,9 +105,28 @@ main {
   background-color: var(--white);
   box-shadow: var(--shadow);
   overflow: hidden;
+  width: 100%;
+  border-radius: 3px;
+  /* fade-in animation */
+  animation: fadeUp 0.5s ease both;
 }
 
-/* ── Card headings — green bar like Madagascar ── */
+.weather-section {
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Card headings — green bar ── */
 .data-section h2,
 .weather-section h2 {
   font-family: var(--font-display);
@@ -125,24 +145,31 @@ main {
   font-size: 0.6rem;
   font-weight: 700;
   color: var(--white);
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 /* Emoticon hidden on mobile */
 .weather-heading::after { content: none; }
 
-/* ── Data rows — label right, value left like Madagascar ── */
+/* ── Data rows ── */
 dl { padding: 0.25rem 0; }
 
 .data-row {
   display: flex;
   align-items: center;
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.75rem;
   border-bottom: 1px solid var(--border);
   gap: 0.5rem;
+  transition: background-color 0.2s ease, border-left 0.2s ease, padding-left 0.2s ease;
 }
 
 .data-row:last-child { border-bottom: none; }
+
+.data-row:hover {
+  background-color: var(--green-light);
+  border-left: 3px solid var(--green);
+  padding-left: calc(0.75rem - 3px);
+}
 
 dt {
   font-size: 0.8rem;
@@ -153,7 +180,7 @@ dt {
 }
 
 dd {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: var(--text);
   text-align: left;
@@ -163,12 +190,15 @@ dd {
 .data-row.highlight dt { color: var(--green); }
 .data-row.highlight dd { color: var(--green); font-weight: 700; }
 
-/* SVG icon — mobile only */
+/* SVG icon — mobile only, with soft circle background */
 .weather-icon-mobile {
   display: block;
-  width: 72px;
-  height: 72px;
-  margin: 0.75rem auto 0.25rem;
+  width: 80px;
+  height: 80px;
+  margin: 1rem auto 0.5rem;
+  background-color: var(--green-light);
+  border-radius: 50%;
+  padding: 0.5rem;
 }
 
 /* ── Footer ── */
@@ -183,92 +213,54 @@ footer {
   line-height: 2;
   border-top: 4px solid var(--gold);
   margin-top: auto;
+  letter-spacing: 0.02em;
 }
 
 /* ══════════════════════════════════════════
    WIDER VIEW — 500px+
-   Cards use absolute positioning inside .hero
-   Data: top-left  |  Weather: middle-right
-   Exactly like the Madagascar sample
+   Negative margin pulls cards over image
+   Data bottom-left | Weather center-right
    ══════════════════════════════════════════ */
 @media (min-width: 500px) {
 
   header h1 { font-size: 3.5rem; }
 
-  /* Hero is the positioning parent */
-  .hero {
-    position: relative;
-  }
-
   .hero img {
-    width: 100%;
-    height: auto;
-    min-height: 400px;
+    min-height: 420px;
     object-fit: cover;
-    display: block;
   }
 
-  /* hero label visible on wider view */
-  .hero-label {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.45));
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    padding: 2rem 1rem 0.6rem;
-    text-align: center;
-  }
-
-  /* main sits absolutely inside hero */
   main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
     flex-direction: row;
-    align-items: stretch;
     justify-content: space-between;
-    gap: 0;
-    padding: 0;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+    margin-top: -200px;
+    position: relative;
+    z-index: 10;
     max-width: 100%;
-    margin: 0;
-    pointer-events: none; /* let image be clickable */
   }
 
-  /* Data card — bottom-left, avoids image branding text */
+  /* Data card — bottom-left */
   .data-section {
-    pointer-events: all;
-    width: 240px;
+    width: clamp(200px, 28%, 300px);
     flex-shrink: 0;
     align-self: flex-end;
     background-color: var(--card-bg);
-    margin-left: 1rem;
-    margin-bottom: 1rem;
   }
 
-  /* Weather card — right side, vertically centered */
+  /* Weather card — center-right */
   .weather-section {
-    pointer-events: all;
-    width: 200px;
+    width: clamp(180px, 22%, 260px);
     flex-shrink: 0;
     align-self: center;
     background-color: var(--card-bg);
-    margin-right: 1rem;
   }
 
   /* Hide SVG, show emoticon */
-  .weather-section .weather-icon-mobile {
+  .weather-icon-mobile {
     display: none;
-    max-height: 0;
-    overflow: hidden;
   }
 
   .weather-heading::after {
@@ -285,10 +277,10 @@ footer {
 
   header h1 { font-size: 5rem; }
 
-  .hero img { min-height: 520px; }
+  .hero img { min-height: 540px; }
 
-  .data-section { width: 300px; }
-  .weather-section { width: 250px; }
-
-  .hero-label { font-size: 1.4rem; }
+  main {
+    margin-top: -250px;
+    padding: 0 2rem 2rem;
+  }
 }
