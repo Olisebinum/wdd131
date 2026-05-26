@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album – Filtered</title>
+  <meta name="description" content="A personal collection of Latter-day Saint temples from around the world, with filtering by age, size, and more.">
+  <meta name="author" content="Olise Ossai Ebinum">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Mobile-first CSS, then larger view -->
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 640px)">
+
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <p class="site-title">Temple Album</p>
+
+      <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
+
+      <nav id="main-nav">
+        <a href="#" data-filter="home" class="active">Home</a>
+        <a href="#" data-filter="old">Old</a>
+        <a href="#" data-filter="new">New</a>
+        <a href="#" data-filter="large">Large</a>
+        <a href="#" data-filter="small">Small</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Temples of The Church of Jesus Christ<br>of Latter-day Saints</h1>
+
+    <p id="filter-label" class="filter-label">Showing: All Temples</p>
+
+    <div class="gallery" id="gallery">
+      <!-- Temple cards inserted by JavaScript -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> &mdash; Olise Ossai Ebinum &mdash; WDD 131</p>
+    <p>Last Modified: <span id="lastmodified"></span></p>
+  </footer>
+
+</body>
+</html>

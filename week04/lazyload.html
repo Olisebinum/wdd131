@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazy Loading Images</title>
+  <link rel="stylesheet" href="styles/lazyload.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Through the Lens</h1>
+    <p class="subtitle">Scroll to reveal each frame</p>
+
+    <div class="gallery">
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/forest1/400/600"
+          alt="Dense green forest canopy viewed from below"
+          width="400"
+          height="600"
+          loading="lazy"
+        />
+        <figcaption>01 — Forest Floor</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/ocean2/400/650"
+          alt="Ocean waves crashing on a rocky shoreline at dusk"
+          width="400"
+          height="650"
+          loading="lazy"
+        />
+        <figcaption>02 — Shoreline</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/mountain3/400/620"
+          alt="Snow-capped mountain peaks rising above clouds"
+          width="400"
+          height="620"
+          loading="lazy"
+        />
+        <figcaption>03 — Summit</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/desert4/400/600"
+          alt="Vast desert landscape with red sand dunes at sunrise"
+          width="400"
+          height="600"
+          loading="lazy"
+        />
+        <figcaption>04 — Dunes</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/river5/400/640"
+          alt="Calm river winding through a misty valley"
+          width="400"
+          height="640"
+          loading="lazy"
+        />
+        <figcaption>05 — Valley River</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://picsum.photos/seed/night6/400/600"
+          alt="Starry night sky over an open plain with a lone tree silhouette"
+          width="400"
+          height="600"
+          loading="lazy"
+        />
+        <figcaption>06 — Night Sky</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-brand">Through the Lens &copy; 2025</p>
+    <p class="footer-modified">Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/lazyload.js"></script>
+</body>
+</html>
