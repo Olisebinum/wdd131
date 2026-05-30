@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NairaWise — WDD131 Website Site Plan by Kendrick Olisebinum" />
+  <title>NairaWise | Site Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/siteplan.css" />
+</head>
+<body>
+
+  <header class="sp-header">
+    <div class="sp-header-inner">
+      <div class="logo-mark" aria-label="NairaWise logo">
+        <span class="logo-icon" aria-hidden="true">₦</span>
+        <span class="logo-text">Naira<strong>Wise</strong></span>
+      </div>
+      <p class="sp-label">WDD 131 — Website Site Plan</p>
+    </div>
+  </header>
+
+  <main class="sp-main">
+
+    <!-- ── 1. Site Name ── -->
+    <section class="sp-section" id="site-name" aria-labelledby="sn-heading">
+      <div class="sp-section-label">01</div>
+      <div class="sp-section-body">
+        <h2 id="sn-heading">Site Name</h2>
+
+        <div class="name-display">
+          <div class="name-logo-block" aria-hidden="true">
+            <span class="name-symbol">₦</span>
+            <span class="name-wordmark">Naira<strong>Wise</strong></span>
+          </div>
+          <h3 class="site-name-text">NairaWise</h3>
+        </div>
+
+        <p>
+          <strong>NairaWise</strong> combines "Naira" — Nigeria's national currency — with "Wise," signalling
+          smart, informed decision-making. The name is immediately recognisable to a Nigerian audience, communicates
+          financial purpose without jargon, and is short enough to be memorable and brandable.
+        </p>
+        <p class="domain-note">Optional domain: <code>nairawise.ng</code> or <code>nairawise.com.ng</code></p>
+      </div>
+    </section>
+
+    <!-- ── 2. Site Purpose ── -->
+    <section class="sp-section" id="site-purpose" aria-labelledby="pu-heading">
+      <div class="sp-section-label">02</div>
+      <div class="sp-section-body">
+        <h2 id="pu-heading">Site Purpose</h2>
+        <p>
+          NairaWise is a three-page informational and interactive website designed for young Nigerian
+          professionals between the ages of 22 and 35 who want to take control of their personal finances.
+        </p>
+        <ul class="purpose-list">
+          <li>Provide culturally relevant, jargon-free financial education on budgeting, saving, and investing within the Nigerian economic context.</li>
+          <li>Offer an interactive Budget Planner tool where users enter their monthly income and expenses to receive an instant personalised analysis with actionable status feedback.</li>
+          <li>Curate a Resources page featuring savings strategies, investment options available in Nigeria (T-Bills, mutual funds, FGN Bonds), and links to reputable financial tools.</li>
+          <li>Deliver a daily rotating financial tip to encourage consistent engagement and habit formation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── 3. Scenarios ── -->
+    <section class="sp-section" id="scenarios" aria-labelledby="sc-heading">
+      <div class="sp-section-label">03</div>
+      <div class="sp-section-body">
+        <h2 id="sc-heading">Scenarios</h2>
+        <p>The following questions represent the core questions a target audience member would bring to this site:</p>
+
+        <ol class="scenario-list">
+          <li>
+            <span class="scenario-q">"I earn ₦200,000 a month. After rent, food, and transport, I have almost nothing left. How can I start saving?"</span>
+            <p class="scenario-a">Answered by: the Budget Planner tool and the 50/30/20 budgeting framework on the Home page.</p>
+          </li>
+          <li>
+            <span class="scenario-q">"I have ₦100,000 sitting idle in my account. What safe investment options exist for a Nigerian beginner?"</span>
+            <p class="scenario-a">Answered by: the Resources page — specifically the Investing section covering T-Bills, FGN Bonds, and mutual funds.</p>
+          </li>
+          <li>
+            <span class="scenario-q">"How much of my income should I be saving each month, and how do I know if I'm on track?"</span>
+            <p class="scenario-a">Answered by: the Budget Planner's savings rate calculator and the Home page savings pillar section.</p>
+          </li>
+          <li>
+            <span class="scenario-q">"What is an emergency fund, and how do I build one on a modest Nigerian salary?"</span>
+            <p class="scenario-a">Answered by: the Resources page — Emergency Fund section with a step-by-step savings guide.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── 4. Color Schema ── -->
+    <section class="sp-section" id="color-schema" aria-labelledby="cs-heading">
+      <div class="sp-section-label">04</div>
+      <div class="sp-section-body">
+        <h2 id="cs-heading">Color Schema</h2>
+        <p>The palette draws on deep forest greens (trust, growth, stability) paired with warm gold accents (wealth, Nigerian cultural warmth) on a natural cream base (readability, elegance).</p>
+
+        <div class="color-grid" role="list">
+
+          <div class="color-swatch" role="listitem" style="background:#0d3b2e;">
+            <div class="swatch-meta">
+              <span class="swatch-name">Forest Dark</span>
+              <span class="swatch-hex">#0d3b2e</span>
+            </div>
+            <p class="swatch-use">Header background, footer, section accents, primary text headings</p>
+          </div>
+
+          <div class="color-swatch" role="listitem" style="background:#1a6b4a;">
+            <div class="swatch-meta">
+              <span class="swatch-name">Forest Mid</span>
+              <span class="swatch-hex">#1a6b4a</span>
+            </div>
+            <p class="swatch-use">Navigation hover states, link colours, stat strip background</p>
+          </div>
+
+          <div class="color-swatch" role="listitem" style="background:#2ea878;">
+            <div class="swatch-meta">
+              <span class="swatch-name">Leaf Green</span>
+              <span class="swatch-hex">#2ea878</span>
+            </div>
+            <p class="swatch-use">Primary buttons, active nav links, section labels, savings bar fill, form focus ring</p>
+          </div>
+
+          <div class="color-swatch gold-swatch" role="listitem" style="background:#d4a843;">
+            <div class="swatch-meta">
+              <span class="swatch-name">Naira Gold</span>
+              <span class="swatch-hex">#d4a843</span>
+            </div>
+            <p class="swatch-use">Tip-of-day border, logo accent colour, quote highlights</p>
+          </div>
+
+          <div class="color-swatch cream-swatch" role="listitem" style="background:#faf7f0; border:1.5px solid #e0d9cc;">
+            <div class="swatch-meta dark-text">
+              <span class="swatch-name">Cream Base</span>
+              <span class="swatch-hex">#faf7f0</span>
+            </div>
+            <p class="swatch-use dark-text">Page background, text on dark backgrounds, card backgrounds</p>
+          </div>
+
+          <div class="color-swatch" role="listitem" style="background:#1a1a1a;">
+            <div class="swatch-meta">
+              <span class="swatch-name">Ink</span>
+              <span class="swatch-hex">#1a1a1a</span>
+            </div>
+            <p class="swatch-use">Body paragraph text, form labels</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. Typography ── -->
+    <section class="sp-section" id="typography" aria-labelledby="ty-heading">
+      <div class="sp-section-label">05</div>
+      <div class="sp-section-body">
+        <h2 id="ty-heading">Typography</h2>
+        <p>Two Google Fonts are used — one elegant serif for display and one refined sans-serif for body copy. This pairing creates authority without coldness.</p>
+
+        <div class="type-grid">
+
+          <div class="type-sample card-block">
+            <p class="type-meta">Display Font — Headings &amp; Logo</p>
+            <p class="type-sample-display">Playfair Display</p>
+            <p class="type-sample-display type-sample-sub">Smart Money Habits for Young Nigerians</p>
+            <ul class="type-usage">
+              <li>All <code>h1</code>–<code>h4</code> headings</li>
+              <li>Logo wordmark</li>
+              <li>Pull-quote / tip text</li>
+              <li>Stat numbers on homepage strip</li>
+            </ul>
+            <p class="type-import-note">Import: <code>Playfair Display — weights 400, 700</code></p>
+          </div>
+
+          <div class="type-sample card-block">
+            <p class="type-meta">Body Font — All Text Content</p>
+            <p class="type-sample-body-lg">DM Sans</p>
+            <p class="type-sample-body">Practical, culturally grounded financial guidance — from budgeting your salary to building lasting wealth in the Nigerian economy.</p>
+            <ul class="type-usage">
+              <li>All body paragraphs and lists</li>
+              <li>Navigation links</li>
+              <li>Form labels and inputs</li>
+              <li>Captions, footnotes, section labels</li>
+              <li>Buttons</li>
+            </ul>
+            <p class="type-import-note">Import: <code>DM Sans — weights 300, 400, 500</code></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. Wireframes ── -->
+    <section class="sp-section" id="wireframes" aria-labelledby="wf-heading">
+      <div class="sp-section-label">06</div>
+      <div class="sp-section-body">
+        <h2 id="wf-heading">Wireframes</h2>
+        <p>The following wireframes represent the planned layout of the Home page in mobile (portrait) and desktop views.</p>
+
+        <div class="wireframes-wrap">
+
+          <!-- Mobile wireframe -->
+          <figure class="wireframe-figure" aria-labelledby="wf-mobile-cap">
+            <figcaption id="wf-mobile-cap">Mobile View — Portrait (≤640px)</figcaption>
+            <div class="wireframe mobile-wf" role="img" aria-label="Mobile wireframe diagram showing stacked layout: header, hero image, h1 and CTA, tip card, three pillar cards, stats, gallery, newsletter form, footer">
+
+              <div class="wf-block wf-header">
+                <div class="wf-logo-bar"></div>
+                <div class="wf-hamburger">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <div class="wf-block wf-hero-img-mobile"></div>
+              <div class="wf-block wf-hero-text-mobile">
+                <div class="wf-line w-70"></div>
+                <div class="wf-line w-90"></div>
+                <div class="wf-line w-50"></div>
+                <div class="wf-btn-row">
+                  <div class="wf-btn"></div>
+                  <div class="wf-btn wf-btn-outline"></div>
+                </div>
+              </div>
+
+              <div class="wf-block wf-tip-mobile">
+                <div class="wf-label-bar"></div>
+                <div class="wf-line w-90"></div>
+                <div class="wf-line w-80"></div>
+                <div class="wf-line w-60"></div>
+                <div class="wf-btn wf-btn-sm"></div>
+              </div>
+
+              <div class="wf-block wf-pillars-mobile">
+                <div class="wf-pillar-card"></div>
+                <div class="wf-pillar-card"></div>
+                <div class="wf-pillar-card"></div>
+              </div>
+
+              <div class="wf-block wf-stats-mobile">
+                <div class="wf-stat-row">
+                  <div class="wf-stat-item"></div>
+                  <div class="wf-stat-item"></div>
+                  <div class="wf-stat-item"></div>
+                </div>
+              </div>
+
+              <div class="wf-block wf-gallery-mobile">
+                <div class="wf-gallery-img"></div>
+                <div class="wf-gallery-img"></div>
+              </div>
+
+              <div class="wf-block wf-form-mobile">
+                <div class="wf-line w-50"></div>
+                <div class="wf-input-box"></div>
+                <div class="wf-input-box"></div>
+                <div class="wf-btn"></div>
+              </div>
+
+              <div class="wf-block wf-footer-bar">
+                <div class="wf-line w-60 center"></div>
+                <div class="wf-line w-40 center"></div>
+              </div>
+
+            </div>
+          </figure>
+
+          <!-- Desktop wireframe -->
+          <figure class="wireframe-figure" aria-labelledby="wf-desktop-cap">
+            <figcaption id="wf-desktop-cap">Desktop View — Wide (≥1024px)</figcaption>
+            <div class="wireframe desktop-wf" role="img" aria-label="Desktop wireframe showing two-column hero, tip card, three-column pillars grid, stats strip, three-column gallery, newsletter form, footer">
+
+              <div class="wf-block wf-header wf-header-wide">
+                <div class="wf-logo-bar"></div>
+                <div class="wf-nav-links">
+                  <div class="wf-nav-item"></div>
+                  <div class="wf-nav-item"></div>
+                  <div class="wf-nav-item"></div>
+                </div>
+              </div>
+
+              <div class="wf-block wf-hero-wide">
+                <div class="wf-hero-text-col">
+                  <div class="wf-label-bar w-40"></div>
+                  <div class="wf-line w-90"></div>
+                  <div class="wf-line w-80"></div>
+                  <div class="wf-line w-60"></div>
+                  <div class="wf-line w-70"></div>
+                  <div class="wf-btn-row">
+                    <div class="wf-btn"></div>
+                    <div class="wf-btn wf-btn-outline"></div>
+                  </div>
+                </div>
+                <div class="wf-hero-img-col"></div>
+              </div>
+
+              <div class="wf-block wf-tip-wide">
+                <div class="wf-label-bar w-30"></div>
+                <div class="wf-line w-95"></div>
+                <div class="wf-line w-85"></div>
+                <div class="wf-line w-50"></div>
+                <div class="wf-btn wf-btn-sm"></div>
+              </div>
+
+              <div class="wf-block wf-pillars-wide">
+                <div class="wf-pillar-card-wide"></div>
+                <div class="wf-pillar-card-wide"></div>
+                <div class="wf-pillar-card-wide"></div>
+              </div>
+
+              <div class="wf-block wf-stats-wide">
+                <div class="wf-stat-item-wide"></div>
+                <div class="wf-stat-item-wide"></div>
+                <div class="wf-stat-item-wide"></div>
+              </div>
+
+              <div class="wf-block wf-gallery-wide">
+                <div class="wf-gallery-img-wide"></div>
+                <div class="wf-gallery-img-wide"></div>
+                <div class="wf-gallery-img-wide"></div>
+              </div>
+
+              <div class="wf-block wf-form-wide">
+                <div class="wf-form-col">
+                  <div class="wf-line w-50"></div>
+                  <div class="wf-line w-70"></div>
+                  <div class="wf-input-box"></div>
+                  <div class="wf-input-box"></div>
+                  <div class="wf-btn"></div>
+                </div>
+              </div>
+
+              <div class="wf-block wf-footer-bar wf-footer-wide">
+                <div class="wf-footer-cols">
+                  <div class="wf-line w-60"></div>
+                  <div class="wf-line w-40"></div>
+                  <div class="wf-line w-30"></div>
+                </div>
+              </div>
+
+            </div>
+          </figure>
+
+        </div><!-- /wireframes-wrap -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="sp-footer">
+    <p>NairaWise Site Plan &mdash; WDD 131 Project &mdash; Olise Ebinum</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('lastModified').textContent =
+      new Date(document.lastModified).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+  </script>
+
+</body>
+</html>
