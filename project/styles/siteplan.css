@@ -153,8 +153,8 @@ body {
   color: var(--green-dark);
 }
 .domain-note {
-  font-size: 0.82rem !important;
-  color: var(--muted) !important;
+  font-size: 0.82rem;
+  color: var(--muted);
   font-style: italic;
 }
 .domain-note code {
@@ -224,6 +224,14 @@ body {
   margin: 0;
 }
 
+/* ── Color swatch backgrounds ── */
+.swatch-forest-dark { background: #0d3b2e; }
+.swatch-forest-mid  { background: #1a6b4a; }
+.swatch-leaf        { background: #2ea878; }
+.swatch-gold        { background: #d4a843; }
+.swatch-cream       { background: #faf7f0; border: 1.5px solid #e0d9cc; }
+.swatch-ink         { background: #1a1a1a; }
+
 /* ── Color swatches ── */
 .color-grid {
   display: grid;
@@ -265,10 +273,10 @@ body {
   line-height: 1.5;
   margin: 0;
 }
-.dark-text { color: var(--ink) !important; }
-.dark-text.swatch-name { color: var(--ink) !important; }
-.swatch-use.dark-text { color: var(--muted) !important; }
-.swatch-hex.dark-text { color: var(--muted) !important; }
+.dark-text { color: var(--ink); }
+.dark-text.swatch-name { color: var(--ink); }
+.swatch-use.dark-text { color: var(--muted); }
+.swatch-hex.dark-text { color: var(--muted); }
 
 /* ── Typography samples ── */
 .type-grid {
@@ -291,7 +299,7 @@ body {
   text-transform: uppercase;
   color: var(--green-light);
   font-weight: 500;
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 0.75rem;
 }
 .type-sample-display {
   font-family: 'Playfair Display', Georgia, serif;
@@ -299,21 +307,21 @@ body {
   font-weight: 700;
   color: var(--green-dark);
   line-height: 1.2;
-  margin-bottom: 0.4rem !important;
+  margin-bottom: 0.4rem;
 }
 .type-sample-sub {
-  font-size: 1rem !important;
+  font-size: 1rem;
   font-weight: 400;
-  color: var(--muted) !important;
+  color: var(--muted);
   font-style: italic;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1rem;
 }
 .type-sample-body-lg {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--green-dark);
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem;
 }
 .type-sample-body {
   font-family: 'DM Sans', sans-serif;
@@ -321,7 +329,7 @@ body {
   font-weight: 300;
   color: var(--muted);
   line-height: 1.7;
-  margin-bottom: 1rem !important;
+  margin-bottom: 1rem;
 }
 .type-usage {
   list-style: none;
@@ -344,8 +352,8 @@ body {
   color: var(--green-light);
 }
 .type-import-note {
-  font-size: 0.75rem !important;
-  color: var(--muted) !important;
+  font-size: 0.75rem;
+  color: var(--muted);
   border-top: 1px solid var(--cream-dark);
   padding-top: 0.75rem;
   margin-top: 0;
