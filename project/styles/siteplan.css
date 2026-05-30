@@ -70,6 +70,8 @@ body {
 .logo-text strong { color: var(--gold-light); font-weight: 700; }
 .sp-label {
   font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--cream-dark);
