@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Favorite Book of Mormon Chapters — save and persist your favorite chapters using localStorage.">
+  <meta name="author" content="Kendrick Olisebinum">
+  <title>Favorite BOM Chapters | WDD 131</title>
+  <link rel="stylesheet" href="styles/bom.css">
+</head>
+<body>
+
+  <header>
+    <h1>📖 Favorite Book of Mormon Chapters</h1>
+    <p>Add your favorite chapters below. Your list is saved automatically.</p>
+  </header>
+
+  <main>
+    <section class="input-section" aria-labelledby="input-heading">
+      <h2 id="input-heading">Add a Chapter</h2>
+      <div class="input-group">
+        <label for="favchap">Book and Chapter</label>
+        <input
+          type="text"
+          id="favchap"
+          placeholder="e.g. Alma 32"
+          autocomplete="off"
+          aria-describedby="input-hint"
+        >
+        <span id="input-hint" class="hint">Enter a book name and chapter number</span>
+        <button type="button" id="add-btn">Add Chapter</button>
+      </div>
+    </section>
+
+    <section class="list-section" aria-labelledby="list-heading">
+      <h2 id="list-heading">My Favorites</h2>
+      <ul id="list" aria-label="Favorite chapters list"></ul>
+      <p id="empty-msg" class="empty-msg">No chapters added yet. Start by adding one above!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>WDD 131 — Week 05 localStorage Activity</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/bom.js"></script>
+</body>
+</html>
