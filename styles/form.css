@@ -669,3 +669,4 @@ input[type="submit"]:active { transform: translateY(-1px); }
   .star-row { gap: 0.3rem; }
   .star-item label { padding: 0.5rem 0.2rem; }
   .star-glyph { font-size: 0.85rem; }
+}
