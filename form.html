@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share your product experience — a refined review form for discerning customers.">
+  <meta name="author" content="Olise Ebinum">
+  <title>Product Review | Lumière</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" aria-label="Lumière brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">Lumière</span>
+      </div>
+      <div class="header-titles">
+        <h1>Share Your Experience</h1>
+        <p class="header-sub">Your voice shapes the community</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-shell">
+
+      <div class="form-eyebrow">
+        <span class="step-line" aria-hidden="true"></span>
+        <span class="step-text">Product Review Form</span>
+        <span class="step-line" aria-hidden="true"></span>
+      </div>
+
+      <p class="required-note">Fields marked <span class="req" aria-hidden="true">✦</span> are required</p>
+
+      <form id="review-form" method="get" action="review.html" novalidate>
+
+        <!-- 01 Product Name -->
+        <div class="field-block" style="--delay: 0.1s">
+          <div class="field-num" aria-hidden="true">01</div>
+          <div class="field-content">
+            <label for="product-name">
+              Product Name <span class="req" aria-label="required">✦</span>
+            </label>
+            <div class="select-wrap">
+              <select id="product-name" name="productName" required>
+                <option value="" disabled selected>Select a Product …</option>
+              </select>
+              <span class="select-arrow" aria-hidden="true">↓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Overall Rating -->
+        <div class="field-block" style="--delay: 0.2s">
+          <div class="field-num" aria-hidden="true">02</div>
+          <div class="field-content">
+            <fieldset class="rating-fieldset">
+              <legend>
+                Overall Rating <span class="req" aria-label="required">✦</span>
+              </legend>
+              <p class="field-hint">Tap a star to rate from 1 (lowest) to 5 (highest)</p>
+
+              <div class="star-row">
+
+                <div class="star-item">
+                  <input type="radio" id="star1" name="rating" value="1" required>
+                  <label for="star1">
+                    <span class="star-glyph" aria-hidden="true">★</span>
+                    <span class="star-num">1</span>
+                  </label>
+                </div>
+
+                <div class="star-item">
+                  <input type="radio" id="star2" name="rating" value="2">
+                  <label for="star2">
+                    <span class="star-glyph" aria-hidden="true">★★</span>
+                    <span class="star-num">2</span>
+                  </label>
+                </div>
+
+                <div class="star-item">
+                  <input type="radio" id="star3" name="rating" value="3">
+                  <label for="star3">
+                    <span class="star-glyph" aria-hidden="true">★★★</span>
+                    <span class="star-num">3</span>
+                  </label>
+                </div>
+
+                <div class="star-item">
+                  <input type="radio" id="star4" name="rating" value="4">
+                  <label for="star4">
+                    <span class="star-glyph" aria-hidden="true">★★★★</span>
+                    <span class="star-num">4</span>
+                  </label>
+                </div>
+
+                <div class="star-item">
+                  <input type="radio" id="star5" name="rating" value="5">
+                  <label for="star5">
+                    <span class="star-glyph" aria-hidden="true">★★★★★</span>
+                    <span class="star-num">5</span>
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- 03 Date of Installation -->
+        <div class="field-block" style="--delay: 0.3s">
+          <div class="field-num" aria-hidden="true">03</div>
+          <div class="field-content">
+            <label for="install-date">
+              Date of Installation <span class="req" aria-label="required">✦</span>
+            </label>
+            <input type="date" id="install-date" name="installDate" required>
+          </div>
+        </div>
+
+        <!-- 04 Useful Features -->
+        <div class="field-block" style="--delay: 0.4s">
+          <div class="field-num" aria-hidden="true">04</div>
+          <div class="field-content">
+            <fieldset class="check-fieldset">
+              <legend>Useful Features</legend>
+              <p class="field-hint">Check all that apply</p>
+              <div class="check-grid">
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-durability" name="features" value="Durability">
+                  <label for="feat-durability">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Durability
+                  </label>
+                </div>
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-ease" name="features" value="Ease of Use">
+                  <label for="feat-ease">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Ease of Use
+                  </label>
+                </div>
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-performance" name="features" value="Performance">
+                  <label for="feat-performance">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Performance
+                  </label>
+                </div>
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-design" name="features" value="Design">
+                  <label for="feat-design">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Design
+                  </label>
+                </div>
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-value" name="features" value="Value for Money">
+                  <label for="feat-value">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Value for Money
+                  </label>
+                </div>
+
+                <div class="check-item">
+                  <input type="checkbox" id="feat-support" name="features" value="Customer Support">
+                  <label for="feat-support">
+                    <span class="check-box" aria-hidden="true"></span>
+                    Customer Support
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- 05 Written Review -->
+        <div class="field-block" style="--delay: 0.5s">
+          <div class="field-num" aria-hidden="true">05</div>
+          <div class="field-content">
+            <label for="written-review">
+              Written Review
+              <span class="optional-badge">Optional</span>
+            </label>
+            <textarea
+              id="written-review"
+              name="writtenReview"
+              rows="5"
+              placeholder="Describe your experience in your own words…"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- 06 Your Name -->
+        <div class="field-block" style="--delay: 0.6s">
+          <div class="field-num" aria-hidden="true">06</div>
+          <div class="field-content">
+            <label for="user-name">
+              Your Name
+              <span class="optional-badge">Optional</span>
+            </label>
+            <input
+              type="text"
+              id="user-name"
+              name="userName"
+              placeholder="How would you like to appear?"
+              autocomplete="given-name"
+            >
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="submit-block" style="--delay: 0.7s">
+          <input type="submit" id="submit-btn" value="Post My Review">
+          <p class="submit-note">Your review will be shared with the community</p>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">✦ Lumière Reviews</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Olise Ebinum</span>
+      <span class="footer-mod">Last Modified: <span id="lastModified"></span></span>
+    </div>
+  </footer>
+
+  <script src="scripts/form.js"></script>
+</body>
+</html>

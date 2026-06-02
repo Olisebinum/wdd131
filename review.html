@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your product review has been submitted successfully — thank you for sharing your experience.">
+  <meta name="author" content="Olise Ebinum">
+  <title>Review Submitted | Lumière</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" aria-label="Lumière brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">Lumière</span>
+      </div>
+      <div class="header-titles">
+        <h1>Review Received</h1>
+        <p class="header-sub">Thank you for your contribution</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-shell">
+      <div class="confirm-shell">
+
+        <div class="confirm-mark" aria-label="Success">✦</div>
+
+        <div>
+          <h2>Thank you for your review</h2>
+          <p class="confirm-sub">Your experience has been shared with the Lumière community and will help others make informed decisions.</p>
+        </div>
+
+        <div class="summary-card">
+          <h3>Your Submission</h3>
+          <div class="summary-rows" id="summary-rows"></div>
+        </div>
+
+        <div class="counter-strip">
+          <span class="counter-label">Reviews submitted<br>from this device</span>
+          <span class="counter-value" id="review-count">0</span>
+        </div>
+
+        <a href="form.html" class="btn-return">
+          ← Submit Another Review
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">✦ Lumière Reviews</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Olise Ebinum</span>
+      <span class="footer-mod">Last Modified: <span id="lastModified"></span></span>
+    </div>
+  </footer>
+
+  <script src="scripts/review.js"></script>
+</body>
+</html>
