@@ -5,8 +5,8 @@
   --surface-2:   #1c1c28;
   --border:      rgba(255,255,255,0.08);
   --border-hi:   rgba(212,175,80,0.5);
-  --amber:       #d4af50;
-  --amber-light: #f0cc70;
+  --amber:       #f5d060;
+  --amber-light: #f8e080;
   --amber-glow:  rgba(212,175,80,0.15);
   --champagne:   #f5e6c0;
   --text-prime:  #f0ece4;
@@ -479,7 +479,7 @@ fieldset {
 input[type="submit"] {
   width: 100%;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--amber), #b8922a);
+  background: linear-gradient(135deg, var(--amber), #c49830);
   color: var(--obsidian);
   border: none;
   border-radius: var(--radius-sm);
@@ -561,7 +561,7 @@ input[type="submit"]:active { transform: translateY(-1px); }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--amber), #b8922a);
+  background: linear-gradient(135deg, var(--amber), #c49830);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -669,4 +669,3 @@ input[type="submit"]:active { transform: translateY(-1px); }
   .star-row { gap: 0.3rem; }
   .star-item label { padding: 0.5rem 0.2rem; }
   .star-glyph { font-size: 0.85rem; }
-}
