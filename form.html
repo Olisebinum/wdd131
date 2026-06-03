@@ -18,7 +18,7 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand" aria-label="Lumière brand">
+      <div class="brand" role="img" aria-label="Lumière brand">
         <span class="brand-mark" aria-hidden="true">✦</span>
         <span class="brand-name">Lumière</span>
       </div>
@@ -43,11 +43,11 @@
       <form id="review-form" method="get" action="review.html" novalidate>
 
         <!-- 01 Product Name -->
-        <div class="field-block" style="--delay: 0.1s">
+        <div class="field-block delay-1">
           <div class="field-num" aria-hidden="true">01</div>
           <div class="field-content">
             <label for="product-name">
-              Product Name <span class="req" aria-label="required">✦</span>
+              Product Name <span class="req" aria-hidden="true">✦</span>
             </label>
             <div class="select-wrap">
               <select id="product-name" name="productName" required>
@@ -59,17 +59,16 @@
         </div>
 
         <!-- 02 Overall Rating -->
-        <div class="field-block" style="--delay: 0.2s">
+        <div class="field-block delay-2">
           <div class="field-num" aria-hidden="true">02</div>
           <div class="field-content">
             <fieldset class="rating-fieldset">
               <legend>
-                Overall Rating <span class="req" aria-label="required">✦</span>
+                Overall Rating <span class="req" aria-hidden="true">✦</span>
               </legend>
               <p class="field-hint">Tap a star to rate from 1 (lowest) to 5 (highest)</p>
 
               <div class="star-row">
-
                 <div class="star-item">
                   <input type="radio" id="star1" name="rating" value="1" required>
                   <label for="star1">
@@ -77,64 +76,58 @@
                     <span class="star-num">1</span>
                   </label>
                 </div>
-
                 <div class="star-item">
-                  <input type="radio" id="star2" name="rating" value="2">
+                  <input type="radio" id="star2" name="rating" value="2" required>
                   <label for="star2">
                     <span class="star-glyph" aria-hidden="true">★★</span>
                     <span class="star-num">2</span>
                   </label>
                 </div>
-
                 <div class="star-item">
-                  <input type="radio" id="star3" name="rating" value="3">
+                  <input type="radio" id="star3" name="rating" value="3" required>
                   <label for="star3">
                     <span class="star-glyph" aria-hidden="true">★★★</span>
                     <span class="star-num">3</span>
                   </label>
                 </div>
-
                 <div class="star-item">
-                  <input type="radio" id="star4" name="rating" value="4">
+                  <input type="radio" id="star4" name="rating" value="4" required>
                   <label for="star4">
                     <span class="star-glyph" aria-hidden="true">★★★★</span>
                     <span class="star-num">4</span>
                   </label>
                 </div>
-
                 <div class="star-item">
-                  <input type="radio" id="star5" name="rating" value="5">
+                  <input type="radio" id="star5" name="rating" value="5" required>
                   <label for="star5">
                     <span class="star-glyph" aria-hidden="true">★★★★★</span>
                     <span class="star-num">5</span>
                   </label>
                 </div>
-
               </div>
             </fieldset>
           </div>
         </div>
 
         <!-- 03 Date of Installation -->
-        <div class="field-block" style="--delay: 0.3s">
+        <div class="field-block delay-3">
           <div class="field-num" aria-hidden="true">03</div>
           <div class="field-content">
             <label for="install-date">
-              Date of Installation <span class="req" aria-label="required">✦</span>
+              Date of Installation <span class="req" aria-hidden="true">✦</span>
             </label>
             <input type="date" id="install-date" name="installDate" required>
           </div>
         </div>
 
         <!-- 04 Useful Features -->
-        <div class="field-block" style="--delay: 0.4s">
+        <div class="field-block delay-4">
           <div class="field-num" aria-hidden="true">04</div>
           <div class="field-content">
             <fieldset class="check-fieldset">
               <legend>Useful Features</legend>
               <p class="field-hint">Check all that apply</p>
               <div class="check-grid">
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-durability" name="features" value="Durability">
                   <label for="feat-durability">
@@ -142,7 +135,6 @@
                     Durability
                   </label>
                 </div>
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-ease" name="features" value="Ease of Use">
                   <label for="feat-ease">
@@ -150,7 +142,6 @@
                     Ease of Use
                   </label>
                 </div>
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-performance" name="features" value="Performance">
                   <label for="feat-performance">
@@ -158,7 +149,6 @@
                     Performance
                   </label>
                 </div>
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-design" name="features" value="Design">
                   <label for="feat-design">
@@ -166,7 +156,6 @@
                     Design
                   </label>
                 </div>
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-value" name="features" value="Value for Money">
                   <label for="feat-value">
@@ -174,7 +163,6 @@
                     Value for Money
                   </label>
                 </div>
-
                 <div class="check-item">
                   <input type="checkbox" id="feat-support" name="features" value="Customer Support">
                   <label for="feat-support">
@@ -182,14 +170,13 @@
                     Customer Support
                   </label>
                 </div>
-
               </div>
             </fieldset>
           </div>
         </div>
 
         <!-- 05 Written Review -->
-        <div class="field-block" style="--delay: 0.5s">
+        <div class="field-block delay-5">
           <div class="field-num" aria-hidden="true">05</div>
           <div class="field-content">
             <label for="written-review">
@@ -206,7 +193,7 @@
         </div>
 
         <!-- 06 Your Name -->
-        <div class="field-block" style="--delay: 0.6s">
+        <div class="field-block delay-6">
           <div class="field-num" aria-hidden="true">06</div>
           <div class="field-content">
             <label for="user-name">
@@ -224,7 +211,7 @@
         </div>
 
         <!-- Submit -->
-        <div class="submit-block" style="--delay: 0.7s">
+        <div class="submit-block delay-7">
           <input type="submit" id="submit-btn" value="Post My Review">
           <p class="submit-note">Your review will be shared with the community</p>
         </div>
@@ -241,6 +228,6 @@
     </div>
   </footer>
 
-  <script src="scripts/form.js"></script>
+  <script src="scripts/form.js" defer></script>
 </body>
 </html>

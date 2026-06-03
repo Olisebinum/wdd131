@@ -186,7 +186,6 @@ main {
   padding-top: 0.5rem;
   letter-spacing: 0.1em;
   text-align: right;
-  aria-hidden: true;
 }
 
 .field-content {
