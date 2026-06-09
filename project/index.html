@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NairaWise — Smart personal finance for young Nigerian professionals. Budget smarter, save consistently, and invest with confidence.">
+  <meta name="author" content="Olise Ebinum">
+  <meta name="theme-color" content="#0d3b2e">
+  <title>NairaWise | Smart Money for Young Nigerians</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x20A6;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ════ HEADER / NAV ════ -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="NairaWise home">
+        <span class="nav-logo-symbol" aria-hidden="true">₦</span>
+        <span class="nav-logo-text">Naira<strong>Wise</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="primary-nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="planner.html">Budget Planner</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════ DAILY TIP BANNER ════ -->
+  <aside class="tip-banner" aria-label="Daily financial tip">
+    <div class="tip-inner">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <div class="tip-content">
+        <p class="tip-label">Tip of the Day</p>
+        <p id="daily-tip-text">Loading tip…</p>
+      </div>
+      <div class="tip-nav" aria-label="Navigate tips">
+        <button class="tip-btn" id="tip-prev" aria-label="Previous tip">← Prev</button>
+        <span id="tip-counter" aria-live="polite"></span>
+        <button class="tip-btn" id="tip-next" aria-label="Next tip">Next →</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main">
+
+    <!-- ════ HERO ════ -->
+    <section class="home-hero" aria-labelledby="hero-heading">
+      <div class="hero-inner section-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow fade-up">Personal Finance · Made for Nigeria</p>
+          <h1 class="hero-heading fade-up delay-1">
+            Take control of your<br><em>Naira. Your future.</em>
+          </h1>
+          <p class="hero-sub fade-up delay-2">
+            Practical, culturally grounded financial guidance for young Nigerian professionals aged 22–35. Budget smarter, save consistently, and invest with confidence.
+          </p>
+          <div class="hero-actions fade-up delay-3">
+            <a href="planner.html" class="btn btn-primary">Start Budget Planner</a>
+            <a href="resources.html" class="btn btn-outline">Browse Resources</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            data-src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=560&q=80"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 420'%3E%3Crect width='560' height='420' fill='%231a6b4a' opacity='.3'/%3E%3C/svg%3E"
+            alt="Person reviewing a personal budget on a laptop"
+            width="560" height="420"
+            class="hero-img"
+            loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ FINANCIAL PILLARS ════ -->
+    <section class="pillars-section" aria-labelledby="pillars-heading">
+      <div class="section-inner">
+        <p class="section-label">Three Pillars</p>
+        <h2 class="section-title" id="pillars-heading">Your financial foundation</h2>
+        <p class="section-intro">Every strong financial plan starts with mastering the basics. Here is where to begin.</p>
+
+        <div class="pillars-grid">
+
+          <article class="pillar-card budget">
+            <div class="pillar-icon" aria-hidden="true">📊</div>
+            <h3>Budgeting</h3>
+            <p>Know where every naira goes. The 50/30/20 framework gives you a clear, guilt-free structure for spending and saving on any income level.</p>
+            <a href="planner.html" class="pillar-link">Try the Planner</a>
+          </article>
+
+          <article class="pillar-card saving">
+            <div class="pillar-icon" aria-hidden="true">🏦</div>
+            <h3>Saving</h3>
+            <p>Build an emergency buffer of 3–6 months of expenses before anything else. Then automate a monthly savings sweep so the decision is never left to willpower.</p>
+            <a href="resources.html#emergency" class="pillar-link">Emergency Fund Guide</a>
+          </article>
+
+          <article class="pillar-card investing">
+            <div class="pillar-icon" aria-hidden="true">📈</div>
+            <h3>Investing</h3>
+            <p>Nigerian T-Bills, FGN Bonds, and mutual funds let you put idle naira to work. Learn which options suit your timeline and risk tolerance.</p>
+            <a href="resources.html#investing" class="pillar-link">Explore Options</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ STATS STRIP ════ -->
+    <section class="stats-strip" aria-label="Key financial benchmarks">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <span class="stat-number">68%</span>
+          <p class="stat-desc">of Nigerian adults lack formal savings — you can be different</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">₦200k</span>
+          <p class="stat-desc">average monthly salary for young professionals in Abuja & Lagos</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10×</span>
+          <p class="stat-desc">potential growth of ₦50,000 invested monthly over 10 years at 12% p.a.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ 50/30/20 EXPLAINER ════ -->
+    <section class="pillars-section pillars-section--alt" aria-labelledby="rule-heading">
+      <div class="section-inner">
+        <p class="section-label">The Framework</p>
+        <h2 class="section-title" id="rule-heading">The 50/30/20 Rule — Nigerian Edition</h2>
+        <p class="section-intro">
+          Popularised globally but fully applicable to Nigerian salaries. Split your take-home pay into three buckets.
+        </p>
+        <div class="pillars-grid">
+          <article class="pillar-card budget">
+            <div class="pillar-icon" aria-hidden="true">🏠</div>
+            <h3>50% — Needs</h3>
+            <p>Rent, food, transport, utilities, healthcare, and school fees. If this exceeds 50%, it is your first priority to reduce — not your savings.</p>
+          </article>
+          <article class="pillar-card saving">
+            <div class="pillar-icon" aria-hidden="true">🎉</div>
+            <h3>30% — Wants</h3>
+            <p>Entertainment, dining out, clothing, data subscriptions, and lifestyle choices. Enjoy life — but within this defined boundary.</p>
+          </article>
+          <article class="pillar-card investing">
+            <div class="pillar-icon" aria-hidden="true">💰</div>
+            <h3>20% — Savings</h3>
+            <p>Emergency fund, investments, debt repayment, and long-term goals. This is non-negotiable — automate it the moment your salary lands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ NEWSLETTER / SIGNUP FORM ════ -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="newsletter-inner">
+        <p class="section-label">Stay Informed</p>
+        <h2 class="section-title" id="newsletter-heading">Get weekly money tips</h2>
+        <p>Join readers getting practical naira-focused financial advice every week — no spam, unsubscribe any time.</p>
+
+        <form class="nw-form" id="newsletter-form" novalidate aria-label="Newsletter sign-up form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sub-name">First Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="sub-name" name="name" autocomplete="given-name" required placeholder="e.g. Chukwuemeka">
+              <span class="field-error" role="alert">Please enter your first name.</span>
+            </div>
+            <div class="form-group">
+              <label for="sub-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="sub-email" name="email" autocomplete="email" required placeholder="you@example.com">
+              <span class="field-error" role="alert">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sub-goal">Your primary financial goal <span aria-hidden="true">*</span></label>
+            <select id="sub-goal" name="goal" required>
+              <option value="" disabled selected>Select your goal…</option>
+              <option value="emergency">Build an emergency fund</option>
+              <option value="save">Save more consistently</option>
+              <option value="invest">Start investing</option>
+              <option value="debt">Pay off debt</option>
+              <option value="budget">Create a monthly budget</option>
+            </select>
+            <span class="field-error" role="alert">Please select a goal.</span>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary">Subscribe — it's free</button>
+          </div>
+        </form>
+
+        <div class="form-success" id="form-success" role="status" aria-live="polite">
+          ✅ You're subscribed! Your first tip is on its way.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo" aria-label="NairaWise">
+          <span aria-hidden="true">₦</span> Naira<strong>Wise</strong>
+        </div>
+        <p>Smart, culturally grounded personal finance guidance for young Nigerian professionals. Not financial advice — educational content only.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="planner.html">Budget Planner</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="resources.html#budgeting">Budgeting</a></li>
+          <li><a href="resources.html#emergency">Emergency Fund</a></li>
+          <li><a href="resources.html#investing">Investing</a></li>
+          <li><a href="resources.html#savings">Savings Tips</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NairaWise · WDD 131 Project · Olise Ebinum</p>
+      <p>Last modified: <span id="last-modified"></span> · <a href="references.html">References</a></p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
