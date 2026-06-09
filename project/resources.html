@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NairaWise Resources — Savings strategies, emergency fund guide, Nigerian investment options including T-Bills, FGN Bonds, and mutual funds.">
+  <meta name="description" content="NairaWise Resources — Savings strategies, emergency fund guide, and Nigerian investment options including T-Bills, FGN Bonds, and mutual funds.">
   <meta name="author" content="Olise Ebinum">
-  <meta name="theme-color" content="#0d3b2e">
+  <meta name="theme-color" content="#0a2e20">
   <title>Resources | NairaWise</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x20A6;</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- ════ HEADER / NAV ════ -->
   <header class="site-header">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="NairaWise home">
-        <span class="nav-logo-symbol" aria-hidden="true">₦</span>
+        <div class="nav-logo-symbol" aria-hidden="true">₦</div>
         <span class="nav-logo-text">Naira<strong>Wise</strong></span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
@@ -32,20 +31,19 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="planner.html">Budget Planner</a></li>
           <li><a href="resources.html" aria-current="page">Resources</a></li>
+          <li><a href="planner.html" class="nav-cta">Start Planning</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ════ DAILY TIP BANNER ════ -->
   <aside class="tip-banner" aria-label="Daily financial tip">
     <div class="tip-inner">
-      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span class="tip-badge">Daily Tip</span>
       <div class="tip-content">
-        <p class="tip-label">Tip of the Day</p>
         <p id="daily-tip-text">Loading tip…</p>
       </div>
-      <div class="tip-nav" aria-label="Navigate tips">
+      <div class="tip-nav">
         <button class="tip-btn" id="tip-prev" aria-label="Previous tip">← Prev</button>
         <span id="tip-counter" aria-live="polite"></span>
         <button class="tip-btn" id="tip-next" aria-label="Next tip">Next →</button>
@@ -55,215 +53,191 @@
 
   <main id="main">
 
-    <!-- ════ PAGE HERO ════ -->
-    <div class="page-hero" role="banner">
-      <h1>Financial Resources</h1>
-      <p>Practical guidance on saving, building an emergency fund, and investing in Nigeria's financial markets — explained without jargon.</p>
+    <div class="page-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow--light">Knowledge Base</p>
+        <h1>Financial Resources</h1>
+        <p>Practical guidance on saving, building an emergency fund, and investing in Nigeria's financial markets — explained without jargon.</p>
+      </div>
     </div>
 
-    <!-- ════ RESOURCE CARDS ════ -->
+    <!-- RESOURCE CARDS -->
     <section class="resources-section" aria-labelledby="res-heading">
-      <div class="section-inner">
-        <p class="section-label">Core Topics</p>
-        <h2 class="section-title" id="res-heading">Where to begin</h2>
-
+      <div class="container">
+        <div class="resources-intro">
+          <p class="eyebrow">Core Topics</p>
+          <h2 class="section-title" id="res-heading">Where to begin</h2>
+          <p class="section-body resources-intro-body">Four essential areas every young Nigerian professional should master before anything else.</p>
+        </div>
         <div class="resources-grid">
 
-          <!-- Emergency Fund -->
           <article class="resource-card" id="emergency">
             <img
-              data-src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=480&q=75"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 200'%3E%3Crect width='480' height='200' fill='%230d3b2e' opacity='.25'/%3E%3C/svg%3E"
+              data-src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=75"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 180'%3E%3Crect width='600' height='180' fill='%230a2e20' opacity='.3'/%3E%3C/svg%3E"
               alt="Piggy bank representing emergency savings"
-              width="480" height="200"
-              class="feature-img"
+              width="600" height="180"
+              class="resource-card-img"
               loading="lazy">
-            <div class="card-icon" aria-hidden="true">🛡️</div>
-            <h3>Building an Emergency Fund</h3>
-            <p>An emergency fund is your financial safety net — covering unexpected expenses without going into debt. Aim for 3–6 months of essential living expenses in a liquid, separate account.</p>
-            <ol class="steps-list" aria-label="Step-by-step emergency fund guide">
-              <li>Calculate your monthly essential costs (rent, food, transport, utilities).</li>
-              <li>Multiply by 3 to get your minimum target.</li>
-              <li>Open a dedicated savings account separate from your regular account.</li>
-              <li>Set an automatic transfer for the day after salary lands.</li>
-              <li>Start with ₦5,000/month if needed — consistency beats amount.</li>
-              <li>Do not touch it unless it is a genuine emergency.</li>
-            </ol>
-            <p class="domain-note">Best account types: Kuda high-interest savings, PiggyVest SafeLock, or any bank with ≥10% p.a. savings rate.</p>
+            <div class="resource-card-body">
+              <div class="card-icon" aria-hidden="true">🛡️</div>
+              <h3>Building an Emergency Fund</h3>
+              <p>Your financial safety net — covering unexpected expenses without going into debt. Aim for 3–6 months of essential living costs in a liquid, separate account.</p>
+              <ol class="steps-list" aria-label="Emergency fund steps">
+                <li>Calculate your monthly essential costs (rent, food, transport, utilities).</li>
+                <li>Multiply by 3 to get your minimum target.</li>
+                <li>Open a dedicated account separate from your spending account.</li>
+                <li>Automate a transfer the day after salary lands.</li>
+                <li>Start with ₦5,000/month if needed — consistency beats amount.</li>
+                <li>Do not touch it unless it is a genuine emergency.</li>
+              </ol>
+              <p class="domain-note">Best options: Kuda high-interest savings, PiggyVest SafeLock, or any account offering ≥10% p.a.</p>
+            </div>
           </article>
 
-          <!-- Savings Strategies -->
           <article class="resource-card" id="savings">
-            <div class="card-icon" aria-hidden="true">💸</div>
-            <h3>Savings Strategies That Work</h3>
-            <p>The best savings strategy is the one you will actually stick to. Here are four approaches proven to work on Nigerian salaries.</p>
-            <ol class="steps-list">
-              <li><strong>Pay yourself first:</strong> Move savings before spending anything else.</li>
-              <li><strong>Automate sweeps:</strong> Scheduled transfers remove willpower from the equation.</li>
-              <li><strong>Savings challenges:</strong> Try the ₦365 challenge — save ₦100 day 1, ₦200 day 2, and so on for small amounts.</li>
-              <li><strong>Round-up savings:</strong> Some apps round purchases to the nearest ₦500 and save the difference.</li>
-              <li><strong>Goal-based saving:</strong> Name each savings pot — Emergency, School Fees, Vacation — to reduce the temptation to dip in.</li>
-            </ol>
-            <ul class="resource-links" aria-label="Savings app resources">
-              <li><a href="https://www.piggyvest.com" target="_blank" rel="noopener noreferrer">PiggyVest — automated savings app</a></li>
-              <li><a href="https://kudabank.com" target="_blank" rel="noopener noreferrer">Kuda Bank — zero-fee banking</a></li>
-              <li><a href="https://cowrywise.com" target="_blank" rel="noopener noreferrer">Cowrywise — savings and investments</a></li>
-            </ul>
+            <div class="resource-card-body">
+              <div class="card-icon" aria-hidden="true">💸</div>
+              <h3>Savings Strategies That Work</h3>
+              <p>The best savings strategy is the one you will actually stick to. Four approaches proven to work on Nigerian salaries.</p>
+              <ol class="steps-list">
+                <li><strong>Pay yourself first:</strong> Move savings before spending anything else.</li>
+                <li><strong>Automate sweeps:</strong> Scheduled transfers remove willpower from the equation entirely.</li>
+                <li><strong>Goal-based pots:</strong> Name each pot — Emergency, School Fees, Travel — to reduce the urge to dip in.</li>
+                <li><strong>1% rule:</strong> Increase your savings rate by 1% every time you get a pay rise. You will not notice it.</li>
+                <li><strong>Round-up savings:</strong> Some apps round purchases to the nearest ₦500 and save the difference automatically.</li>
+              </ol>
+              <ul class="resource-links" aria-label="Savings app links">
+                <li><a href="https://www.piggyvest.com" target="_blank" rel="noopener noreferrer">PiggyVest — automated savings</a></li>
+                <li><a href="https://kudabank.com" target="_blank" rel="noopener noreferrer">Kuda Bank — zero-fee banking</a></li>
+                <li><a href="https://cowrywise.com" target="_blank" rel="noopener noreferrer">Cowrywise — savings &amp; investments</a></li>
+              </ul>
+            </div>
           </article>
 
-          <!-- Investing: Nigerian options -->
           <article class="resource-card" id="investing">
             <img
-              data-src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=480&q=75"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 200'%3E%3Crect width='480' height='200' fill='%231a6b4a' opacity='.25'/%3E%3C/svg%3E"
+              data-src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=75"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 180'%3E%3Crect width='600' height='180' fill='%230f4232' opacity='.3'/%3E%3C/svg%3E"
               alt="Financial charts and investment graphs"
-              width="480" height="200"
-              class="feature-img"
+              width="600" height="180"
+              class="resource-card-img"
               loading="lazy">
-            <div class="card-icon" aria-hidden="true">📈</div>
-            <h3>Nigerian Investment Options</h3>
-            <p>Once you have your emergency fund, the next step is putting idle naira to work. These are the main options available to Nigerians without a large starting capital.</p>
-
-            <table class="invest-table" aria-label="Nigerian investment options comparison">
-              <thead>
-                <tr>
-                  <th scope="col">Option</th>
-                  <th scope="col">Min. Entry</th>
-                  <th scope="col">Typical Return</th>
-                  <th scope="col">Risk</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Treasury Bills (T-Bills)</td>
-                  <td>₦10,000</td>
-                  <td>18–22% p.a.</td>
-                  <td class="risk-low">Low</td>
-                </tr>
-                <tr>
-                  <td>FGN Savings Bonds</td>
-                  <td>₦5,000</td>
-                  <td>13–17% p.a.</td>
-                  <td class="risk-low">Low</td>
-                </tr>
-                <tr>
-                  <td>Money Market Funds</td>
-                  <td>₦1,000</td>
-                  <td>15–20% p.a.</td>
-                  <td class="risk-low">Low</td>
-                </tr>
-                <tr>
-                  <td>Mutual Funds (Equity)</td>
-                  <td>₦5,000</td>
-                  <td>Varies (market)</td>
-                  <td class="risk-med">Medium</td>
-                </tr>
-                <tr>
-                  <td>NGX Stocks</td>
-                  <td>Varies</td>
-                  <td>Varies (market)</td>
-                  <td class="risk-med">Medium–High</td>
-                </tr>
-                <tr>
-                  <td>Real Estate (REITs)</td>
-                  <td>₦10,000</td>
-                  <td>8–14% p.a.</td>
-                  <td class="risk-med">Medium</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <ul class="resource-links" aria-label="Investment platform links">
-              <li><a href="https://www.dmo.gov.ng" target="_blank" rel="noopener noreferrer">DMO Nigeria — FGN Bonds portal</a></li>
-              <li><a href="https://ngxgroup.com" target="_blank" rel="noopener noreferrer">Nigerian Exchange Group (NGX)</a></li>
-              <li><a href="https://cowrywise.com" target="_blank" rel="noopener noreferrer">Cowrywise — mutual funds &amp; T-Bills</a></li>
-            </ul>
+            <div class="resource-card-body">
+              <div class="card-icon" aria-hidden="true">📈</div>
+              <h3>Nigerian Investment Options</h3>
+              <p>Once your emergency fund is in place, these are the main ways to grow your naira without large starting capital.</p>
+              <table class="invest-table" aria-label="Investment options comparison">
+                <thead>
+                  <tr>
+                    <th scope="col">Option</th>
+                    <th scope="col">Min. Entry</th>
+                    <th scope="col">Typical Return</th>
+                    <th scope="col">Risk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Treasury Bills</td><td>₦10,000</td><td>18–22% p.a.</td><td class="risk-low">Low</td></tr>
+                  <tr><td>FGN Savings Bonds</td><td>₦5,000</td><td>13–17% p.a.</td><td class="risk-low">Low</td></tr>
+                  <tr><td>Money Market Funds</td><td>₦1,000</td><td>15–20% p.a.</td><td class="risk-low">Low</td></tr>
+                  <tr><td>Mutual Funds (Equity)</td><td>₦5,000</td><td>Market-dependent</td><td class="risk-med">Medium</td></tr>
+                  <tr><td>NGX Stocks</td><td>Varies</td><td>Market-dependent</td><td class="risk-med">Med–High</td></tr>
+                  <tr><td>REITs</td><td>₦10,000</td><td>8–14% p.a.</td><td class="risk-med">Medium</td></tr>
+                </tbody>
+              </table>
+              <ul class="resource-links" aria-label="Investment platform links">
+                <li><a href="https://www.dmo.gov.ng" target="_blank" rel="noopener noreferrer">DMO Nigeria — FGN Bonds portal</a></li>
+                <li><a href="https://ngxgroup.com" target="_blank" rel="noopener noreferrer">Nigerian Exchange Group (NGX)</a></li>
+                <li><a href="https://cowrywise.com" target="_blank" rel="noopener noreferrer">Cowrywise — T-Bills &amp; mutual funds</a></li>
+              </ul>
+            </div>
           </article>
 
-          <!-- Budgeting Deep Dive -->
           <article class="resource-card" id="budgeting">
-            <div class="card-icon" aria-hidden="true">📊</div>
-            <h3>Budgeting in a High-Inflation Economy</h3>
-            <p>Nigeria's inflation makes budgeting more challenging but more important. Prices shift monthly — your budget must adapt with them.</p>
-            <ol class="steps-list">
-              <li>Review and update your budget at the start of every month — never copy last month blindly.</li>
-              <li>Prioritise essentials first; inflation hits food and transport hardest in Nigeria.</li>
-              <li>Keep a small "price shock" buffer of 5–10% within your needs bucket for unexpected price jumps.</li>
-              <li>Track your spending in naira, not in foreign currency equivalents.</li>
-              <li>Consider dollar-denominated savings (PiggyVest Dollar Flex) as a hedge on a portion of your income.</li>
-            </ol>
-            <p class="domain-note">
-              <strong>Recommended tool:</strong> Run the <a href="planner.html">NairaWise Budget Planner</a> at the start of each month with updated figures.
-            </p>
+            <div class="resource-card-body">
+              <div class="card-icon" aria-hidden="true">📊</div>
+              <h3>Budgeting in a High-Inflation Economy</h3>
+              <p>Nigeria's inflation makes budgeting harder but far more important. Prices shift monthly — your budget must adapt with them.</p>
+              <ol class="steps-list">
+                <li>Update your budget at the start of every month — never copy last month's figures blindly.</li>
+                <li>Prioritise essentials first; inflation hits food and transport hardest.</li>
+                <li>Build a 5–10% "price shock" buffer inside your needs bucket for unexpected price jumps.</li>
+                <li>Track spending in naira, not foreign currency equivalents.</li>
+                <li>Consider dollar-denominated savings (PiggyVest Dollar Flex) as an inflation hedge on part of your income.</li>
+              </ol>
+              <p class="domain-note">
+                <strong>Recommended:</strong> Run the <a href="planner.html">NairaWise Budget Planner</a> at the start of each month with fresh figures.
+              </p>
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ════ FILTERABLE TIPS ════ -->
+    <!-- FILTERABLE TIPS -->
     <section class="tips-filter" aria-labelledby="tips-heading">
-      <div class="tips-filter-inner">
-        <p class="section-label">Quick Tips</p>
-        <h2 class="section-title" id="tips-heading">Financial tips — filter by topic</h2>
-        <p class="section-intro">Browse practical tips by category. Each one is actionable from today.</p>
-
-        <div class="filter-tabs" role="group" aria-label="Filter tips by category">
-          <button class="filter-tab active" data-filter="all">All Tips</button>
-          <button class="filter-tab" data-filter="budgeting">Budgeting</button>
-          <button class="filter-tab" data-filter="saving">Saving</button>
-          <button class="filter-tab" data-filter="investing">Investing</button>
+      <div class="container">
+        <div class="tips-filter-header">
+          <p class="eyebrow">Quick Tips</p>
+          <h2 class="section-title" id="tips-heading">Filter by topic</h2>
+          <p class="section-body resources-intro-body">Practical, actionable tips — each one you can apply starting today.</p>
+          <div class="filter-tabs" role="group" aria-label="Filter tips by category">
+            <button class="filter-tab active" data-filter="all">All Tips</button>
+            <button class="filter-tab" data-filter="budgeting">Budgeting</button>
+            <button class="filter-tab" data-filter="saving">Saving</button>
+            <button class="filter-tab" data-filter="investing">Investing</button>
+          </div>
         </div>
-
         <div class="tips-grid" id="tips-grid" aria-live="polite" aria-label="Filtered tips"></div>
       </div>
     </section>
 
-    <!-- ════ PLANNER CTA ════ -->
+    <!-- CTA -->
     <section class="cta-section" aria-label="Call to action">
       <div class="cta-section-inner">
-        <p class="cta-eyebrow">Ready to apply this?</p>
+        <p class="eyebrow eyebrow--light cta-eyebrow">Ready to apply this?</p>
         <h2 class="cta-heading">Run your budget analysis now</h2>
-        <p class="cta-body">
-          Put all of this into practice with the NairaWise Budget Planner — get a personalised 50/30/20 breakdown in under two minutes.
-        </p>
+        <p class="cta-body">Put all of this into practice with the NairaWise Budget Planner — get a personalised 50/30/20 breakdown in under two minutes.</p>
         <a href="planner.html" class="btn btn-gold">Open Budget Planner</a>
       </div>
     </section>
 
   </main>
 
-  <!-- ════ FOOTER ════ -->
   <footer class="site-footer" aria-label="Site footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo" aria-label="NairaWise">
-          <span aria-hidden="true">₦</span> Naira<strong>Wise</strong>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-sq" aria-hidden="true">₦</div>
+            Naira<strong>Wise</strong>
+          </div>
+          <p>Smart, culturally grounded personal finance for young Nigerian professionals. Educational content only — not financial advice.</p>
         </div>
-        <p>Smart, culturally grounded personal finance guidance for young Nigerian professionals. Not financial advice — educational content only.</p>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="planner.html">Budget Planner</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="references.html">References</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="#budgeting">Budgeting</a></li>
+            <li><a href="#emergency">Emergency Fund</a></li>
+            <li><a href="#investing">Investing</a></li>
+            <li><a href="#savings">Savings Tips</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="planner.html">Budget Planner</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="references.html">References</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NairaWise · WDD 131 Project · Olise Ebinum</p>
+        <p>Last modified: <span id="last-modified"></span> · <a href="references.html">References</a></p>
       </div>
-      <div class="footer-col">
-        <h4>Topics</h4>
-        <ul>
-          <li><a href="resources.html#budgeting">Budgeting</a></li>
-          <li><a href="resources.html#emergency">Emergency Fund</a></li>
-          <li><a href="resources.html#investing">Investing</a></li>
-          <li><a href="resources.html#savings">Savings Tips</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 NairaWise · WDD 131 Project · Olise Ebinum</p>
-      <p>Last modified: <span id="last-modified"></span> · <a href="references.html">References</a></p>
     </div>
   </footer>
 
