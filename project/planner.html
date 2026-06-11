@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=1160&q=75" fetchpriority="high">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <header class="site-header">
@@ -40,9 +40,7 @@
   <aside class="tip-banner" aria-label="Daily financial tip">
     <div class="tip-inner">
       <span class="tip-badge">Daily Tip</span>
-      <div class="tip-content">
-        <p id="daily-tip-text">Loading tip…</p>
-      </div>
+      <div class="tip-content"><p id="daily-tip-text">Loading tip…</p></div>
       <div class="tip-nav">
         <button class="tip-btn" id="tip-prev" aria-label="Previous tip">← Prev</button>
         <span id="tip-counter" aria-live="polite"></span>
@@ -53,180 +51,272 @@
 
   <main id="main">
 
-    <div class="page-hero">
+    <!-- HERO -->
+    <div class="planner-hero">
       <div class="container">
-        <p class="eyebrow eyebrow--light">50/30/20 Framework</p>
-        <h1>Budget Planner</h1>
-        <p>Enter your monthly figures for an instant, personalised breakdown — and actionable feedback on where you stand.</p>
+        <div class="planner-hero-grid">
+          <div class="planner-hero-text">
+            <p class="eyebrow eyebrow--light">50 / 30 / 20 Framework</p>
+            <h1>Your Budget,<br><em>Analysed.</em></h1>
+            <p>Enter your monthly figures — get an instant, personalised breakdown with real feedback on where you stand.</p>
+          </div>
+          <div class="planner-hero-chips" aria-hidden="true">
+            <div class="hero-chip chip-green">
+              <span class="chip-icon">🏠</span>
+              <span class="chip-label">Needs</span>
+              <span class="chip-pct">50%</span>
+            </div>
+            <div class="hero-chip chip-gold">
+              <span class="chip-icon">🎉</span>
+              <span class="chip-label">Wants</span>
+              <span class="chip-pct">30%</span>
+            </div>
+            <div class="hero-chip chip-dark">
+              <span class="chip-icon">💰</span>
+              <span class="chip-label">Savings</span>
+              <span class="chip-pct">20%</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <section class="planner-section">
+    <!-- PLANNER TOOL -->
+    <section class="planner-section" aria-labelledby="planner-heading">
       <div class="container">
+        <div class="planner-layout">
 
-        <img
-          data-src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=1160&q=75"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1160 200'%3E%3Crect width='1160' height='200' fill='%230a2e20' opacity='.4'/%3E%3C/svg%3E"
-          alt="Person working through a budget at a desk"
-          width="1160" height="200"
-          class="planner-banner-img"
-          loading="lazy">
+          <!-- LEFT: Step-by-step form -->
+          <div class="planner-left">
+            <h2 class="planner-form-title" id="planner-heading">Enter your figures</h2>
 
-        <div class="planner-grid">
+            <form id="planner-form" novalidate aria-label="Budget input form">
 
-          <!-- Form -->
-          <div class="planner-form-card">
-            <h2>Monthly Figures</h2>
-            <div class="planner-form-inner">
-              <form id="planner-form" novalidate aria-label="Budget input form">
-
-                <div class="form-group">
-                  <label for="income">Monthly Take-Home Income <span aria-hidden="true">*</span></label>
-                  <div class="input-prefix">
-                    <span aria-hidden="true">₦</span>
-                    <input type="number" id="income" name="income" min="0" step="500" required
-                      placeholder="e.g. 200000" aria-describedby="income-hint">
+              <!-- Step 1: Income -->
+              <div class="plan-step">
+                <div class="plan-step-header">
+                  <div class="step-icon-wrap step-icon--income">💼</div>
+                  <div>
+                    <p class="step-label">Step 1</p>
+                    <p class="step-title">Monthly Income</p>
                   </div>
-                  <small id="income-hint" class="income-hint">After tax. Full amount in naira.</small>
-                  <span class="field-error" id="income-error" role="alert" style="display:none;">Please enter your monthly income.</span>
                 </div>
-
-                <fieldset class="expense-group">
-                  <legend class="expense-legend">
-                    Essential Needs <span class="expense-legend-accent">(target: 50%)</span>
-                  </legend>
+                <div class="step-body">
                   <div class="form-group">
-                    <label for="rent">Rent / Housing</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="rent" name="rent" min="0" step="500" placeholder="0">
+                    <label for="income">Take-Home Pay <span aria-hidden="true">*</span></label>
+                    <div class="input-prefix">
+                      <span aria-hidden="true">₦</span>
+                      <input type="number" id="income" name="income" min="0" step="500" required
+                        placeholder="e.g. 200,000" aria-describedby="income-hint">
                     </div>
+                    <small id="income-hint" class="income-hint">After tax. Full monthly amount.</small>
+                    <span class="field-error" id="income-error" role="alert" style="display:none;">Please enter your monthly income.</span>
                   </div>
-                  <div class="form-group">
-                    <label for="food">Food &amp; Groceries</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="food" name="food" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="transport">Transportation</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="transport" name="transport" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="utilities">Utilities (Data, NEPA, Water)</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="utilities" name="utilities" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="health">Healthcare / Medication</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="health" name="health" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                </fieldset>
-
-                <fieldset class="expense-group">
-                  <legend class="expense-legend">
-                    Lifestyle &amp; Wants <span class="expense-legend-accent-gold">(target: 30%)</span>
-                  </legend>
-                  <div class="form-group">
-                    <label for="entertainment">Entertainment &amp; Outings</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="entertainment" name="entertainment" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="clothing">Clothing &amp; Personal Care</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="clothing" name="clothing" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="dining">Dining Out &amp; Takeaway</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="dining" name="dining" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="subscriptions">Subscriptions (Netflix, Spotify…)</label>
-                    <div class="input-prefix"><span aria-hidden="true">₦</span>
-                      <input type="number" id="subscriptions" name="subscriptions" min="0" step="500" placeholder="0">
-                    </div>
-                  </div>
-                </fieldset>
-
-                <div class="planner-actions">
-                  <button type="submit" class="btn btn-primary">Analyse My Budget</button>
-                  <button type="button" class="btn btn-outline" id="reset-btn">Reset</button>
                 </div>
+              </div>
 
-              </form>
-            </div>
+              <!-- Step 2: Needs -->
+              <div class="plan-step">
+                <div class="plan-step-header">
+                  <div class="step-icon-wrap step-icon--needs">🏠</div>
+                  <div>
+                    <p class="step-label">Step 2 · Target 50%</p>
+                    <p class="step-title">Essential Needs</p>
+                  </div>
+                </div>
+                <div class="step-body">
+                  <fieldset>
+                    <legend class="sr-only">Essential needs expenses</legend>
+                    <div class="input-grid">
+                      <div class="form-group">
+                        <label for="rent">🏘️ Rent / Housing</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="rent" name="rent" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="food">🛒 Food & Groceries</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="food" name="food" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="transport">🚌 Transportation</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="transport" name="transport" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="utilities">⚡ Utilities & Data</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="utilities" name="utilities" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="health">💊 Healthcare</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="health" name="health" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <!-- Step 3: Wants -->
+              <div class="plan-step">
+                <div class="plan-step-header">
+                  <div class="step-icon-wrap step-icon--wants">🎉</div>
+                  <div>
+                    <p class="step-label">Step 3 · Target 30%</p>
+                    <p class="step-title">Lifestyle & Wants</p>
+                  </div>
+                </div>
+                <div class="step-body">
+                  <fieldset>
+                    <legend class="sr-only">Lifestyle and wants expenses</legend>
+                    <div class="input-grid">
+                      <div class="form-group">
+                        <label for="entertainment">🎬 Entertainment</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="entertainment" name="entertainment" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="clothing">👗 Clothing & Care</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="clothing" name="clothing" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="dining">🍽️ Dining Out</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="dining" name="dining" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="subscriptions">📱 Subscriptions</label>
+                        <div class="input-prefix"><span>₦</span>
+                          <input type="number" id="subscriptions" name="subscriptions" min="0" step="500" placeholder="0">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="planner-actions">
+                <button type="submit" class="btn btn-primary">Analyse My Budget →</button>
+                <button type="button" class="btn btn-outline" id="reset-btn">Reset</button>
+              </div>
+
+            </form>
           </div>
 
-          <!-- Results -->
-          <div class="planner-results" aria-live="polite" aria-atomic="true">
-            <div class="results-card">
-              <h2>Your Analysis</h2>
-              <div class="results-card-inner">
+          <!-- RIGHT: Results panel -->
+          <div class="planner-right" aria-live="polite" aria-atomic="true">
 
-                <div id="results-placeholder" class="results-placeholder">
-                  <p class="placeholder-icon" aria-hidden="true">📊</p>
-                  <p>Fill in your figures and click <strong>Analyse My Budget</strong> to see your personalised breakdown.</p>
+            <!-- Idle state -->
+            <div id="results-placeholder" class="results-idle">
+              <div class="idle-visual" aria-hidden="true">
+                <div class="idle-ring">
+                  <svg viewBox="0 0 120 120" width="120" height="120">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="10"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)" stroke-width="10"
+                      stroke-dasharray="94 220" stroke-linecap="round" transform="rotate(-90 60 60)" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="10"
+                      stroke-dasharray="63 220" stroke-linecap="round" transform="rotate(62 60 60)" opacity="0.3"/>
+                  </svg>
+                  <span class="idle-ring-label">₦</span>
                 </div>
-
-                <div id="results-content" class="results-content" aria-label="Budget analysis results">
-                  <div class="result-summary">
-                    <div class="result-box">
-                      <p class="rb-label">Income</p>
-                      <p class="rb-value" id="r-income">—</p>
-                    </div>
-                    <div class="result-box">
-                      <p class="rb-label">Total Expenses</p>
-                      <p class="rb-value" id="r-expenses">—</p>
-                    </div>
-                    <div class="result-box highlight">
-                      <p class="rb-label">Balance</p>
-                      <p class="rb-value" id="r-balance">—</p>
-                    </div>
-                    <div class="result-box">
-                      <p class="rb-label">Savings Rate</p>
-                      <p class="rb-value" id="r-savings">—</p>
-                    </div>
-                  </div>
-
-                  <div class="breakdown-section">
-                    <h3>Budget Breakdown</h3>
-                    <div class="bar-row">
-                      <span class="bar-label">Needs</span>
-                      <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Needs percentage">
-                        <div class="bar-fill needs" id="bar-needs" style="width:0%"></div>
-                      </div>
-                      <span class="bar-pct" id="bar-needs-pct">0%</span>
-                    </div>
-                    <div class="bar-row">
-                      <span class="bar-label">Wants</span>
-                      <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Wants percentage">
-                        <div class="bar-fill wants" id="bar-wants" style="width:0%"></div>
-                      </div>
-                      <span class="bar-pct" id="bar-wants-pct">0%</span>
-                    </div>
-                    <div class="bar-row">
-                      <span class="bar-label">Savings</span>
-                      <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Savings percentage">
-                        <div class="bar-fill savings" id="bar-savings" style="width:0%"></div>
-                      </div>
-                      <span class="bar-pct" id="bar-savings-pct">0%</span>
-                    </div>
-                  </div>
-
-                  <div id="status-msg" class="status-message" aria-live="polite"></div>
-                  <p id="recommended-split" class="recommended-split"></p>
-                </div>
-
               </div>
+              <h3>Ready when you are</h3>
+              <p>Fill in your figures on the left and hit <strong>Analyse</strong> to see your personalised 50/30/20 breakdown.</p>
+              <ul class="idle-hints">
+                <li>📊 Visual breakdown chart</li>
+                <li>💡 Personalised feedback</li>
+                <li>🗂️ Saved to your browser</li>
+              </ul>
+            </div>
+
+            <!-- Active results -->
+            <div id="results-content" class="results-content hidden" aria-label="Budget analysis results">
+
+              <!-- Donut visual -->
+              <div class="results-donut-wrap" aria-hidden="true">
+                <svg class="results-donut" viewBox="0 0 120 120" width="120" height="120">
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="12"/>
+                  <circle id="donut-needs" cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)"
+                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
+                    transform="rotate(-90 60 60)" class="donut-arc donut-arc--needs"/>
+                  <circle id="donut-wants" cx="60" cy="60" r="50" fill="none" stroke="var(--gold)"
+                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
+                    class="donut-arc donut-arc--wants"/>
+                  <circle id="donut-savings" cx="60" cy="60" r="50" fill="none" stroke="var(--forest)"
+                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
+                    class="donut-arc donut-arc--savings"/>
+                </svg>
+                <div class="donut-center">
+                  <p class="donut-label">Savings</p>
+                  <p class="donut-value" id="donut-pct">0%</p>
+                </div>
+              </div>
+
+              <!-- Legend -->
+              <div class="donut-legend" aria-hidden="true">
+                <div class="legend-item"><span class="legend-dot legend-dot--needs"></span>Needs <strong id="l-needs">—</strong></div>
+                <div class="legend-item"><span class="legend-dot legend-dot--wants"></span>Wants <strong id="l-wants">—</strong></div>
+                <div class="legend-item"><span class="legend-dot legend-dot--savings"></span>Savings <strong id="l-savings">—</strong></div>
+              </div>
+
+              <!-- Summary tiles -->
+              <div class="result-tiles">
+                <div class="result-tile">
+                  <p class="tile-label">Income</p>
+                  <p class="tile-value" id="r-income">—</p>
+                </div>
+                <div class="result-tile">
+                  <p class="tile-label">Expenses</p>
+                  <p class="tile-value" id="r-expenses">—</p>
+                </div>
+                <div class="result-tile tile-highlight">
+                  <p class="tile-label">Balance</p>
+                  <p class="tile-value" id="r-balance">—</p>
+                </div>
+                <div class="result-tile">
+                  <p class="tile-label">Savings Rate</p>
+                  <p class="tile-value" id="r-savings">—</p>
+                </div>
+              </div>
+
+              <!-- Bars -->
+              <div class="breakdown-section">
+                <div class="bar-row">
+                  <span class="bar-label">Needs</span>
+                  <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Needs percentage">
+                    <div class="bar-fill needs" id="bar-needs" style="width:0%"></div>
+                  </div>
+                  <span class="bar-pct" id="bar-needs-pct">0%</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">Wants</span>
+                  <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Wants percentage">
+                    <div class="bar-fill wants" id="bar-wants" style="width:0%"></div>
+                  </div>
+                  <span class="bar-pct" id="bar-wants-pct">0%</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">Savings</span>
+                  <div class="bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Savings percentage">
+                    <div class="bar-fill savings" id="bar-savings" style="width:0%"></div>
+                  </div>
+                  <span class="bar-pct" id="bar-savings-pct">0%</span>
+                </div>
+              </div>
+
+              <div id="status-msg" class="status-message" aria-live="polite"></div>
+              <p id="recommended-split" class="recommended-split"></p>
+
             </div>
           </div>
 
@@ -234,18 +324,18 @@
       </div>
     </section>
 
-    <!-- History -->
+    <!-- HISTORY -->
     <section class="history-section" aria-labelledby="history-heading">
       <div class="container">
-        <div class="history-card">
-          <h2 id="history-heading">
-            Recent Budget Plans
-            <button id="clear-history-btn" class="btn btn-outline clear-history-btn" aria-label="Clear budget history">Clear History</button>
-          </h2>
-          <p class="history-meta">Your last 5 analyses are saved locally to your browser.</p>
-          <ul class="history-list" id="history-list" aria-label="Saved budget entries"></ul>
-          <p id="history-empty" class="hidden">No saved budgets yet. Run your first analysis above.</p>
+        <div class="history-header">
+          <div>
+            <p class="eyebrow">Your History</p>
+            <h2 id="history-heading">Recent Budget Plans</h2>
+          </div>
+          <button id="clear-history-btn" class="btn btn-outline btn-sm" aria-label="Clear budget history">Clear All</button>
         </div>
+        <ul class="history-list" id="history-list" aria-label="Saved budget entries"></ul>
+        <p id="history-empty" class="history-empty-msg hidden">No saved budgets yet — run your first analysis above.</p>
       </div>
     </section>
 
