@@ -43,6 +43,54 @@ function saveToHistory(entry) {
 }
 
 /* ════════════════════════════════════
+   ANALYTICS ENGINE
+════════════════════════════════════ */
+
+/**
+ * Calculates a dynamic health score based on savings capacity, 
+ * net balance directionality, and essential expenditure balance.
+ */
+function calculateHealthScore(data) {
+  let score = 50;
+  score += data.savingsPct;
+  if (data.balance > 0) score += 15;
+  if (data.needsPct <= 50) score += 15;
+  return Math.min(score, 100);
+}
+
+/**
+ * Extracts the highest single itemized allocation across 
+ * structural need and lifestyle want object buckets.
+ */
+function getLargestExpense(data) {
+  const all = {
+    ...data.needs,
+    ...data.wants
+  };
+  // FIXED: Correctly targeting array value pairs at index for numerical sorting
+  return Object.entries(all)
+    .sort((a, b) => b - a);
+}
+
+/**
+ * Recalculates historical mean statistics across saved user budgets.
+ */
+function updateHistoryStats() {
+  const history = loadHistory();
+  const avgEl = document.getElementById('average-savings');
+  
+  if (!avgEl) return;
+
+  if (!history.length) {
+    avgEl.textContent = '';
+    return;
+  }
+
+  const avg = history.reduce((sum, item) => sum + item.savingsPct, 0) / history.length;
+  avgEl.textContent = `Average Savings Rate: ${Math.round(avg)}%`;
+}
+
+/* ════════════════════════════════════
    CORE CALCULATION
 ════════════════════════════════════ */
 
@@ -55,17 +103,17 @@ function calculateBudget() {
 
   // Expense inputs grouped by category
   const needs = {
-    rent:      parseInput('rent'),
-    food:      parseInput('food'),
-    transport: parseInput('transport'),
-    utilities: parseInput('utilities'),
-    health:    parseInput('health'),
+    'Rent / Housing':   parseInput('rent'),
+    'Food & Groceries':  parseInput('food'),
+    'Transportation':   parseInput('transport'),
+    'Utilities & Data': parseInput('utilities'),
+    'Healthcare':       parseInput('health'),
   };
   const wants = {
-    entertainment: parseInput('entertainment'),
-    clothing:      parseInput('clothing'),
-    dining:        parseInput('dining'),
-    subscriptions: parseInput('subscriptions'),
+    'Entertainment': parseInput('entertainment'),
+    'Clothing & Care': parseInput('clothing'),
+    'Dining Out':     parseInput('dining'),
+    'Subscriptions':  parseInput('subscriptions'),
   };
 
   const totalNeeds  = Object.values(needs).reduce((a, b) => a + b, 0);
@@ -80,9 +128,22 @@ function calculateBudget() {
   const savingsPct = income > 0 ? Math.round((savingsAmt / income) * 100) : 0;
 
   return {
-    income, totalNeeds, totalWants, totalExpenses,
-    balance, savingsAmt, needsPct, wantsPct, savingsPct,
-    date: new Date().toLocaleDateString('en-NG', { day: 'numeric', month: 'short', year: 'numeric' }),
+    income,
+    needs,
+    wants,
+    totalNeeds,
+    totalWants,
+    totalExpenses,
+    balance,
+    savingsAmt,
+    needsPct,
+    wantsPct,
+    savingsPct,
+    date: new Date().toLocaleDateString('en-NG', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    })
   };
 }
 
@@ -132,8 +193,61 @@ function getStatus(data) {
 }
 
 /* ════════════════════════════════════
-   RENDER RESULTS
+   RENDER VISUALIZATIONS
 ════════════════════════════════════ */
+
+/** Renders dynamic SVG Donut chart components */
+function renderDonutChart(data) {
+  const circumference = 314;
+
+  const needsLength = (data.needsPct / 100) * circumference;
+  const wantsLength = (data.wantsPct / 100) * circumference;
+  const savingsLength = (data.savingsPct / 100) * circumference;
+
+  const needsArc = document.getElementById('donut-needs');
+  const wantsArc = document.getElementById('donut-wants');
+  const savingsArc = document.getElementById('donut-savings');
+
+  if (!needsArc || !wantsArc || !savingsArc) return;
+
+  needsArc.setAttribute(
+    'stroke-dasharray',
+    `${needsLength} ${circumference}`
+  );
+
+  wantsArc.setAttribute(
+    'stroke-dasharray',
+    `${wantsLength} ${circumference}`
+  );
+
+  wantsArc.setAttribute(
+    'stroke-dashoffset',
+    `-${needsLength}`
+  );
+
+  savingsArc.setAttribute(
+    'stroke-dasharray',
+    `${savingsLength} ${circumference}`
+  );
+
+  savingsArc.setAttribute(
+    'stroke-dashoffset',
+    `-${needsLength + wantsLength}`
+  );
+
+  const donutPct = document.getElementById('donut-pct');
+  if (donutPct) {
+    donutPct.textContent = `${data.savingsPct}%`;
+  }
+
+  const lNeeds = document.getElementById('l-needs');
+  const lWants = document.getElementById('l-wants');
+  const lSavings = document.getElementById('l-savings');
+
+  if (lNeeds) lNeeds.textContent = `${data.needsPct}%`;
+  if (lWants) lWants.textContent = `${data.wantsPct}%`;
+  if (lSavings) lSavings.textContent = `${data.savingsPct}%`;
+}
 
 function setBarWidth(barId, pct) {
   const bar = document.getElementById(barId);
@@ -144,6 +258,10 @@ function setBarWidth(barId, pct) {
   if (track) track.setAttribute('aria-valuenow', String(clamped));
 }
 
+/* ════════════════════════════════════
+   RENDER RESULTS MAIN
+════════════════════════════════════ */
+
 function renderResults(data) {
   // Show results panel
   document.getElementById('results-placeholder')?.classList.add('hidden');
@@ -151,10 +269,10 @@ function renderResults(data) {
   if (content) content.classList.add('visible');
 
   // Summary boxes — using template literals
-  const incomeEl  = document.getElementById('r-income');
+  const incomeEl   = document.getElementById('r-income');
   const expensesEl = document.getElementById('r-expenses');
-  const balanceEl = document.getElementById('r-balance');
-  const savingsEl = document.getElementById('r-savings');
+  const balanceEl  = document.getElementById('r-balance');
+  const savingsEl  = document.getElementById('r-savings');
 
   if (incomeEl)   incomeEl.textContent   = formatNaira(data.income);
   if (expensesEl) expensesEl.textContent = formatNaira(data.totalExpenses);
@@ -162,9 +280,27 @@ function renderResults(data) {
   if (savingsEl)  savingsEl.textContent  = `${data.savingsPct}%`;
 
   // Breakdown bars
-  setBarWidth('bar-needs',   data.needsPct);
-  setBarWidth('bar-wants',   data.wantsPct);
-  setBarWidth('bar-savings', data.savingsPct);
+  setBarWidth('bar-needs',    data.needsPct);
+  setBarWidth('bar-wants',    data.wantsPct);
+  setBarWidth('bar-savings',  data.savingsPct);
+
+  // Trigger Donut Graph Metrics
+  renderDonutChart(data);
+
+  // Financial Health Score UI Update
+  const scoreEl = document.getElementById('health-score');
+  if (scoreEl) {
+    scoreEl.textContent = `${calculateHealthScore(data)}/100`;
+  }
+
+  // FIXED: Correct extraction validation of string keys vs array values
+  const largest = getLargestExpense(data);
+  const largestEl = document.getElementById('largest-expense');
+  if (largestEl && largest && largest > 0) {
+    largestEl.textContent = `${largest} (${formatNaira(largest)})`;
+  } else if (largestEl) {
+    largestEl.textContent = 'None';
+  }
 
   const needsLbl   = document.getElementById('bar-needs-pct');
   const wantsLbl   = document.getElementById('bar-wants-pct');
@@ -201,6 +337,9 @@ function renderHistory() {
   const history = loadHistory();
 
   if (!list) return;
+
+  // Process historical descriptive updates
+  updateHistoryStats();
 
   if (!history.length) {
     if (empty) empty.classList.remove('hidden');

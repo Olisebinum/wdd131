@@ -12,10 +12,10 @@
 :root {
   /* Brand */
   --forest:      #0a2e20;   /* deepest green — hero bg, footer */
-  --pine:        #0f4232;   /* nav bg */
+  --pine:        #0a2e20;  /* consolidated with forest — one dark green */   /* nav bg */
   --emerald:     #1a6b4a;   /* mid green — buttons, accents */
   --leaf:        #2db87a;   /* bright green — hover, highlights */
-  --gold:        #c9a84c;   /* primary gold */
+  --gold:        #e8c56a;  /* unified with gold-bright to reduce color count */   /* primary gold */
   --gold-bright: #e8c56a;   /* hover gold */
   --gold-pale:   #f5e8c0;   /* gold tint backgrounds */
 
@@ -83,7 +83,7 @@ a:hover { color: var(--forest); }
    logo left · links center · CTA right
 ══════════════════════════════════════ */
 .site-header {
-  background: var(--pine);
+  background: var(--forest);
   position: sticky; top: 0; z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -134,10 +134,10 @@ a:hover { color: var(--forest); }
   letter-spacing: 0.01em;
 }
 .nav-links a:hover { background: rgba(255,255,255,0.08); color: var(--white); }
-.nav-links a[aria-current="page"] { background: rgba(201,168,76,0.15); color: var(--gold-bright); }
+.nav-links a[aria-current="page"] { background: rgba(201,168,76,0.18); color: var(--gold-bright); }
 
 .nav-cta {
-  background: var(--gold);
+  background: var(--gold-bright);
   color: var(--forest) !important;
   font-weight: 600 !important;
   padding: 0.5rem 1.2rem !important;
@@ -245,7 +245,7 @@ a:hover { color: var(--forest); }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--emerald);
+  color: var(--green-text);
   margin-bottom: 0.75rem;
 }
 .eyebrow--light { color: var(--gold-bright); }
@@ -286,7 +286,7 @@ a:hover { color: var(--forest); }
 .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .btn-primary { background: var(--emerald); color: var(--white); }
 .btn-primary:hover { background: var(--forest); color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,66,50,0.3); }
-.btn-gold { background: var(--gold); color: var(--forest); }
+.btn-gold { background: var(--gold-bright); color: var(--forest); }
 .btn-gold:hover { background: var(--gold-bright); color: var(--forest); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
 .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
 .btn-ghost:hover { background: rgba(255,255,255,0.08); color: var(--white); border-color: rgba(255,255,255,0.6); }
@@ -620,7 +620,7 @@ a:hover { color: var(--forest); }
   flex-shrink: 0;
   width: 64px;
 }
-.rule-pct.needs { color: #5ecf9a; }  /* lightened leaf — 4.6:1 on forest card */
+.rule-pct.needs { color: var(--white); }  /* white — 14.74:1 on forest card */
 .rule-pct.wants { color: var(--gold-bright); }
 .rule-pct.savings { color: var(--white); }
 .rule-card-body h3 {
@@ -934,6 +934,76 @@ a:hover { color: var(--forest); }
 .history-balance.neg { color: #c0392b; }
 #history-empty { text-align: center; color: var(--muted); font-size: 0.86rem; padding: 1.5rem; }
 .clear-history-btn { font-size: 0.78rem; padding: 0.4rem 0.9rem; }
+
+
+
+/* ── Donut Chart Component ── */
+.donut-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+}
+.donut-svg {
+  transform: rotate(-90deg);
+  border-radius: 50%;
+}
+.donut-base { fill: none; stroke: var(--border); stroke-width: 4; }
+.donut-segment { fill: none; stroke-width: 4; transition: stroke-dasharray 0.6s var(--ease), stroke-dashoffset 0.6s var(--ease); }
+.donut-segment.needs   { stroke: var(--emerald); }
+.donut-segment.wants   { stroke: var(--gold); }
+.donut-segment.savings { stroke: var(--forest); }
+.donut-text { font-family: var(--serif); font-weight: 700; fill: var(--ink); }
+.donut-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em; fill: var(--muted); }
+
+/* Donut Legends */
+.donut-legend { display: flex; justify-content: center; gap: 1rem; width: 100%; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--body); }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+.legend-dot.needs { background: var(--emerald); }
+.legend-dot.wants { background: var(--gold); }
+.legend-dot.savings { background: var(--forest); }
+
+/* ── Analytics Tiles (Health & Largest Expense) ── */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 520px) { .analytics-grid { grid-template-columns: 1fr; } }
+
+.health-card, .largest-expense-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t) var(--ease);
+}
+.health-card:hover, .largest-expense-card:hover { transform: translateY(-2px); }
+.tile-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.tile-value { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+#largest-expense { font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--green-text); margin-top: 0.25rem; }
+
+/* ── Trend Analytics Spacing ── */
+#average-savings {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green-text);
+  background: rgba(26,107,74,0.06);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--r-pill);
+  margin-top: 0.5rem;
+}
+
 
 /* Resources page styles — see resources.css */
 

@@ -7,7 +7,7 @@
   <meta name="author" content="Olise Ebinum">
   <meta name="theme-color" content="#0a2e20">
   <title>Budget Planner | NairaWise</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x20A6;</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%E2%82%A6%3C/text%3E%3C/svg%3E">
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,6 @@
 
   <main id="main">
 
-    <!-- HERO -->
     <div class="planner-hero">
       <div class="container">
         <div class="planner-hero-grid">
@@ -82,12 +81,11 @@
       </div>
     </div>
 
-    <!-- PLANNER TOOL -->
     <section class="planner-section" aria-labelledby="planner-heading">
       <div class="container">
         <div class="planner-layout">
 
-          <!-- LEFT: Step-by-step form -->
+          <!-- Left Column: Form Inputs -->
           <div class="planner-left">
             <h2 class="planner-form-title" id="planner-heading">Enter your figures</h2>
 
@@ -107,8 +105,7 @@
                     <label for="income">Take-Home Pay <span aria-hidden="true">*</span></label>
                     <div class="input-prefix">
                       <span aria-hidden="true">₦</span>
-                      <input type="number" id="income" name="income" min="0" step="500" required
-                        placeholder="e.g. 200,000" aria-describedby="income-hint">
+                      <input type="number" id="income" name="income" min="0" step="500" required placeholder="e.g. 200,000" aria-describedby="income-hint">
                     </div>
                     <small id="income-hint" class="income-hint">After tax. Full monthly amount.</small>
                     <span class="field-error" id="income-error" role="alert" style="display:none;">Please enter your monthly income.</span>
@@ -214,19 +211,17 @@
             </form>
           </div>
 
-          <!-- RIGHT: Results panel -->
+          <!-- Right Column: Results Display -->
           <div class="planner-right" aria-live="polite" aria-atomic="true">
 
-            <!-- Idle state -->
+            <!-- Idle View State -->
             <div id="results-placeholder" class="results-idle">
               <div class="idle-visual" aria-hidden="true">
                 <div class="idle-ring">
                   <svg viewBox="0 0 120 120" width="120" height="120">
                     <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="10"/>
-                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)" stroke-width="10"
-                      stroke-dasharray="94 220" stroke-linecap="round" transform="rotate(-90 60 60)" opacity="0.3"/>
-                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="10"
-                      stroke-dasharray="63 220" stroke-linecap="round" transform="rotate(62 60 60)" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)" stroke-width="10" stroke-dasharray="94 220" stroke-linecap="round" transform="rotate(-90 60 60)" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="10" stroke-dasharray="63 220" stroke-linecap="round" transform="rotate(62 60 60)" opacity="0.3"/>
                   </svg>
                   <span class="idle-ring-label">₦</span>
                 </div>
@@ -240,22 +235,15 @@
               </ul>
             </div>
 
-            <!-- Active results -->
-            <div id="results-content" class="results-content hidden" aria-label="Budget analysis results">
-
-              <!-- Donut visual -->
+            <!-- Calculated Active View State -->
+            <div id="results-content" class="results-content">
+              
               <div class="results-donut-wrap" aria-hidden="true">
                 <svg class="results-donut" viewBox="0 0 120 120" width="120" height="120">
                   <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="12"/>
-                  <circle id="donut-needs" cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)"
-                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
-                    transform="rotate(-90 60 60)" class="donut-arc donut-arc--needs"/>
-                  <circle id="donut-wants" cx="60" cy="60" r="50" fill="none" stroke="var(--gold)"
-                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
-                    class="donut-arc donut-arc--wants"/>
-                  <circle id="donut-savings" cx="60" cy="60" r="50" fill="none" stroke="var(--forest)"
-                    stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round"
-                    class="donut-arc donut-arc--savings"/>
+                  <circle id="donut-needs" cx="60" cy="60" r="50" fill="none" stroke="var(--emerald)" stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round" transform="rotate(-90 60 60)" class="donut-arc donut-arc--needs"/>
+                  <circle id="donut-wants" cx="60" cy="60" r="50" fill="none" stroke="var(--gold)" stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round" class="donut-arc donut-arc--wants"/>
+                  <circle id="donut-savings" cx="60" cy="60" r="50" fill="none" stroke="var(--forest)" stroke-width="12" stroke-dasharray="0 314" stroke-linecap="round" class="donut-arc donut-arc--savings"/>
                 </svg>
                 <div class="donut-center">
                   <p class="donut-label">Savings</p>
@@ -263,14 +251,23 @@
                 </div>
               </div>
 
-              <!-- Legend -->
               <div class="donut-legend" aria-hidden="true">
                 <div class="legend-item"><span class="legend-dot legend-dot--needs"></span>Needs <strong id="l-needs">—</strong></div>
                 <div class="legend-item"><span class="legend-dot legend-dot--wants"></span>Wants <strong id="l-wants">—</strong></div>
                 <div class="legend-item"><span class="legend-dot legend-dot--savings"></span>Savings <strong id="l-savings">—</strong></div>
               </div>
 
-              <!-- Summary tiles -->
+              <div class="analytics-grid">
+                <div class="health-card">
+                  <p class="tile-label">Financial Health</p>
+                  <p class="tile-value" id="health-score">0/100</p>
+                </div>
+                <div class="largest-expense-card">
+                  <p class="tile-label">Largest Expense</p>
+                  <p class="tile-value" id="largest-expense">—</p>
+                </div>
+              </div>
+
               <div class="result-tiles">
                 <div class="result-tile">
                   <p class="tile-label">Income</p>
@@ -290,7 +287,6 @@
                 </div>
               </div>
 
-              <!-- Bars -->
               <div class="breakdown-section">
                 <div class="bar-row">
                   <span class="bar-label">Needs</span>
@@ -325,13 +321,14 @@
       </div>
     </section>
 
-    <!-- HISTORY -->
+    <!-- History Log Section -->
     <section class="history-section" aria-labelledby="history-heading">
       <div class="container">
         <div class="history-header">
           <div>
             <p class="eyebrow">Your History</p>
             <h2 id="history-heading">Recent Budget Plans</h2>
+            <p id="average-savings" class="average-savings-badge"></p>
           </div>
           <button id="clear-history-btn" class="btn btn-outline btn-sm" aria-label="Clear budget history">Clear All</button>
         </div>
@@ -353,7 +350,7 @@
           <p>Smart, culturally grounded personal finance for young Nigerian professionals. Educational content only — not financial advice.</p>
         </div>
         <div class="footer-col">
-          <h4>Pages</h4>
+          <h3>Pages</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="planner.html">Budget Planner</a></li>
@@ -362,7 +359,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Topics</h4>
+          <h3>Topics</h3>
           <ul>
             <li><a href="resources.html#budgeting">Budgeting</a></li>
             <li><a href="resources.html#emergency">Emergency Fund</a></li>
@@ -372,7 +369,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 NairaWise · WDD 131 Project · Olise Ebinum</p>
+        <p>&copy; 2026 NairaWise · WDD 131 Project · Olise Ebinum</p>
         <p>Last modified: <span id="last-modified"></span> · <a href="references.html">References</a></p>
       </div>
     </div>
