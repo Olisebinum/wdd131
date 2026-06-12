@@ -689,9 +689,9 @@ a:hover { color: var(--forest); }
   border-color: var(--emerald);
   box-shadow: 0 0 0 3px rgba(26,107,74,0.12);
 }
-.form-group input.invalid { border-color: #d04040; }
+.form-group input.invalid, .form-group select.invalid { border-color: #d04040; }
 .field-error { font-size: 0.74rem; color: #c0392b; display: none; }
-.form-group input.invalid + .field-error { display: block; }
+.form-group input.invalid + .field-error, .form-group select.invalid + .field-error { display: block; }
 .form-submit-row { display: flex; justify-content: center; padding-top: 0.5rem; }
 
 .form-success {
