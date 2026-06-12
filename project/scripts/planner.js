@@ -67,9 +67,9 @@ function getLargestExpense(data) {
     ...data.needs,
     ...data.wants
   };
-  // FIXED: Correctly targeting array value pairs at index for numerical sorting
-  return Object.entries(all)
-    .sort((a, b) => b - a);
+  const entries = Object.entries(all).filter(([, value]) => value > 0);
+  if (!entries.length) return null;
+  return entries.sort((a, b) => b[1] - a[1])[0];
 }
 
 /**
@@ -293,13 +293,13 @@ function renderResults(data) {
     scoreEl.textContent = `${calculateHealthScore(data)}/100`;
   }
 
-  // FIXED: Correct extraction validation of string keys vs array values
+  // FIXED: largest is now [name, value] or null
   const largest = getLargestExpense(data);
   const largestEl = document.getElementById('largest-expense');
-  if (largestEl && largest && largest > 0) {
-    largestEl.textContent = `${largest} (${formatNaira(largest)})`;
-  } else if (largestEl) {
-    largestEl.textContent = 'None';
+  if (largestEl) {
+    largestEl.textContent = largest
+      ? `${largest[0]} (${formatNaira(largest[1])})`
+      : 'None';
   }
 
   const needsLbl   = document.getElementById('bar-needs-pct');
